@@ -11,6 +11,7 @@ from api.routes.alerts import router as alerts_router
 from api.routes.ask import router as ask_router
 from api.routes.copilot import router as copilot_router
 from api.routes.webhooks import router as webhooks_router
+from oauth.routes import router as oauth_router
 from api.routes.guest import router as guest_router
 from api.routes.health import router as health_router
 from api.routes.materials import router as materials_router
@@ -20,6 +21,7 @@ from core.database import ApiKey, AsyncSessionLocal, Base, Material, engine
 from scheduler.jobs import build_scheduler
 import rag.models  # noqa: F401  (registers RAG tables on Base)
 import webhooks.models  # noqa: F401
+import oauth.models  # noqa: F401
 
 # Copilot change: the plan's 10 critical minerals replace the source's 8-item
 # list (Yttrium/Dysprosium/Indium -> grouped as "Rare Earths" plus nickel,
@@ -67,6 +69,7 @@ app.include_router(guest_router)
 app.include_router(ask_router)
 app.include_router(copilot_router)
 app.include_router(webhooks_router)
+app.include_router(oauth_router)
 
 @app.post('/auth/keys')
 async def create_key(payload: CreateApiKeyRequest):

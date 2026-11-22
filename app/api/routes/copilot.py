@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from agent import tools_core as core
 from agent.graph import run_agent
-from api.auth import require_api_key
+from api.auth import require_api_key, require_scope
 from core.config import get_settings
 from core.database import get_db
 
@@ -40,23 +40,23 @@ class ReportRequest(BaseModel):
     focus: str | None = None
 
 
-@router.post("/agent")
+@router.post("/agent", dependencies=[Depends(require_scope("ask"))])
 async def agent_route(payload: AgentRequest):
     return _env(await run_agent(payload.question))
 
 
-@router.get("/tools/signal")
+@router.get("/tools/signal", dependencies=[Depends(require_scope("read:materials"))])
 async def tool_signal(material: str = Query(...), db: AsyncSession = Depends(get_db)):
     return await _guard(core.get_material_signal(db, material))
 
 
-@router.get("/tools/history")
+@router.get("/tools/history", dependencies=[Depends(require_scope("read:materials"))])
 async def tool_history(material: str = Query(...), days: int = Query(30, ge=1, le=90),
                        db: AsyncSession = Depends(get_db)):
     return await _guard(core.get_material_history(db, material, days))
 
 
-@router.get("/tools/supplier-exposure")
+@router.get("/tools/supplier-exposure", dependencies=[Depends(require_scope("read:materials"))])
 async def tool_exposure(company: str | None = None, material: str | None = None, country: str | None = None):
     try:
         return _env(core.supplier_exposure(company, material, country))
@@ -64,11 +64,11 @@ async def tool_exposure(company: str | None = None, material: str | None = None,
         raise HTTPException(status_code=422, detail=str(e))
 
 
-@router.post("/tools/search")
+@router.post("/tools/search", dependencies=[Depends(require_scope("ask"))])
 async def tool_search(payload: SearchRequest, db: AsyncSession = Depends(get_db)):
     return _env(await core.search_documents(db, payload.query, payload.k, payload.mode))
 
 
-@router.post("/tools/risk-report")
+@router.post("/tools/risk-report", dependencies=[Depends(require_scope("ask"))])
 async def tool_report(payload: ReportRequest, db: AsyncSession = Depends(get_db)):
     return await _guard(core.write_risk_report(db, payload.material, payload.focus))

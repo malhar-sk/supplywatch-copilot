@@ -1,2 +1,3 @@
 received_at,event_id,event_type,material,previous_score,score,threshold,band,subscription_id
-2026-11-22T12:27:07.779Z,3084592e-b3be-4349-a2a0-25cfe245f084,risk.threshold_crossed,Gallium,79,97,89,elevated,2
+2026-11-22T12:32:37.229Z,7bd07c64-0bd7-43f0-8ff7-174eefb26c1a,risk.threshold_crossed,Gallium,79,97,89,elevated,2
+2026-11-22T12:32:37.793Z,07596394-2fca-4279-846f-c33a62e85d0d,risk.threshold_crossed,Gallium,79,97,89,elevated,6

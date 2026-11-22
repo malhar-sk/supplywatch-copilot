@@ -3,11 +3,11 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import desc, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from api.auth import require_api_key
+from api.auth import require_scope
 from core.config import get_settings
 from core.database import DisruptionScore, Material, RawSignal, get_db
 
-router = APIRouter(prefix="/materials", tags=["materials"], dependencies=[Depends(require_api_key)])
+router = APIRouter(prefix="/materials", tags=["materials"], dependencies=[Depends(require_scope("read:materials"))])
 
 @router.get('')
 async def list_materials(db: AsyncSession = Depends(get_db)):

@@ -1,14 +1,13 @@
 """Webhook delivery log, signed test pings, and the admin score endpoint used by
 scripts/simulate_spike.py to force a threshold crossing."""
-import hmac
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, Header, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel, Field
 from sqlalchemy import desc, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from api.auth import require_api_key
+from api.auth import require_api_key, require_scope
 from core.config import get_settings
 from core.database import AlertSubscription, ApiKey, Material, get_db
 from webhooks.alerts import record_score
@@ -20,12 +19,6 @@ router = APIRouter(tags=["webhooks"])
 
 def _env(data):
     return {"data": data, "meta": {"timestamp": datetime.now(timezone.utc), "version": get_settings().app_version}}
-
-
-async def require_admin(x_admin_secret: str | None = Header(default=None)):
-    secret = get_settings().admin_bootstrap_secret
-    if not secret or not x_admin_secret or not hmac.compare_digest(secret, x_admin_secret):
-        raise HTTPException(status_code=403, detail="admin access required")
 
 
 class ScoreIn(BaseModel):
@@ -44,7 +37,7 @@ def _row(d: WebhookDelivery) -> dict:
             "delivered_at": d.delivered_at}
 
 
-@router.post("/admin/materials/{material_id}/score", dependencies=[Depends(require_admin)])
+@router.post("/admin/materials/{material_id}/score", dependencies=[Depends(require_scope("admin"))])
 async def admin_record_score(material_id: int, payload: ScoreIn, db: AsyncSession = Depends(get_db)):
     m = await db.get(Material, material_id)
     if not m:

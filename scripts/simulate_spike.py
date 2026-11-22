@@ -32,10 +32,19 @@ def env_file() -> dict:
     return out
 
 
-def admin_headers(api: str, cfg: dict) -> dict:
-    """OAuth2 client-credentials token with the `admin` scope (see M7)."""
+def admin_headers(c: httpx.Client, api_key: str, cfg: dict) -> dict:
+    """OAuth2 client-credentials token with the `admin` scope. Creating an admin-scoped
+    client needs the ADMIN_BOOTSTRAP_SECRET from .env."""
     secret = os.environ.get("ADMIN_BOOTSTRAP_SECRET") or cfg.get("ADMIN_BOOTSTRAP_SECRET", "")
-    return {"X-Admin-Secret": secret}
+    r = c.post("/oauth/clients", headers={"X-API-Key": api_key, "X-Admin-Secret": secret},
+               json={"name": "spike-simulator", "scopes": ["admin"]})
+    if r.status_code != 200:
+        raise SystemExit(f"could not create admin OAuth client ({r.status_code}): {r.text}. Is ADMIN_BOOTSTRAP_SECRET set in .env?")
+    cred = r.json()["data"]
+    tok = c.post("/oauth/token", data={"grant_type": "client_credentials", "client_id": cred["client_id"],
+                                       "client_secret": cred["client_secret"], "scope": "admin"}).json()
+    print(f"   admin token via OAuth2 client credentials (client {cred['client_id']}, expires in {tok['expires_in']} s)")
+    return {"Authorization": f"Bearer {tok['access_token']}"}
 
 
 def main():
@@ -58,7 +67,7 @@ def main():
                                                        "webhook_url": a.webhook_url}).json()["data"]
     print(f"1. subscribed #{sub['id']}: {a.material} (current score {current}) threshold {threshold} -> {a.webhook_url}")
 
-    adm = admin_headers(a.api, cfg)
+    adm = admin_headers(c, key, cfg)
     base = c.post(f"/admin/materials/{mid}/score", headers=adm, json={"score": threshold - 10}).json()["data"]
     print(f"2. baseline score {base['score']} (previous {base['previous_score']}): alerts fired = {len(base['alerts_fired'])}")
     spike = c.post(f"/admin/materials/{mid}/score", headers=adm, json={"score": threshold + 8,

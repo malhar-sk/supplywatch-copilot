@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from api.auth import require_api_key
+from api.auth import require_scope
 from core.config import get_settings
 from core.database import Material, get_db
 from rag.answer import ask
@@ -20,7 +20,7 @@ class AskRequest(BaseModel):
     include_contexts: bool = False  # return full retrieved chunk texts (used by the evals)
 
 
-@router.post("/ask", dependencies=[Depends(require_api_key)])
+@router.post("/ask", dependencies=[Depends(require_scope("ask"))])
 async def ask_route(payload: AskRequest, db: AsyncSession = Depends(get_db)):
     material = None
     if payload.material_id is not None:
