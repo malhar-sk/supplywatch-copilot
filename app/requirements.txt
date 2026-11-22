@@ -1,0 +1,20 @@
+# --- from the SupplyWatch source (unchanged pins) ---
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+SQLAlchemy==2.0.40
+asyncpg==0.30.0
+pydantic-settings==2.9.1
+apscheduler==3.10.4
+httpx==0.28.1
+resend==2.8.0
+python-dotenv==1.1.0
+requests>=2.31
+yfinance==1.7.0
+# --- added for the copilot ---
+pgvector==0.4.1
+sentence-transformers==5.1.0
+PyJWT==2.10.1
+langgraph==0.6.7
+langchain-core==0.3.76
+langchain-anthropic==0.3.20
+anthropic==0.68.0

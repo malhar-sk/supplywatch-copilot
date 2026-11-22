@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.llm_cache/
+app/.llm_cache/
+logs/*
+!logs/.gitkeep
+n8n_data/*
+!n8n_data/.gitkeep
+!n8n_data/alerts.sample.csv
+evals/cache/
+*.egg-info/
