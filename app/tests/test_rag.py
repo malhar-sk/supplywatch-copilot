@@ -57,7 +57,8 @@ def test_ingest_writes_documents_and_chunks(ingested):
 @pytest.mark.parametrize("mode", ["vector", "hybrid"])
 @pytest.mark.parametrize("question,doc_id", [
     ("When did China ban gallium exports to the United States?", "usgs-2025-gallium-events-trends-and-issues"),
-    ("What can replace antimony in flame retardants?", "usgs-2025-antimony-substitutes"),
+    # 2024 and 2025 editions of this section are word-for-word identical: either is correct
+    ("What can replace antimony in flame retardants?", ("usgs-2025-antimony-substitutes", "usgs-2024-antimony-substitutes")),
     ("What share of Kivu Cobalt Logistics' cobalt comes from the DRC?", "supplier-kivu-cobalt-logistics"),
 ])
 def test_known_question_retrieves_known_doc_top5(ingested, mode, question, doc_id):
@@ -72,7 +73,8 @@ def test_known_question_retrieves_known_doc_top5(ingested, mode, question, doc_i
         return hits
 
     hits = asyncio.run(_run())
-    assert doc_id in [h.document_id for h in hits]
+    accepted = {doc_id} if isinstance(doc_id, str) else set(doc_id)
+    assert accepted & {h.document_id for h in hits}
 
 
 def test_ask_returns_answer_with_citations(ingested):

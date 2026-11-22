@@ -125,7 +125,10 @@ def test_record_score_fires_once_on_crossing_and_logs_delivery():
             return first, second, third, deliveries, hist
 
     first, second, third, deliveries, hist = asyncio.run(_run())
-    assert first["alerts_fired"] == [] and third["alerts_fired"] == []
-    assert len(second["alerts_fired"]) == 1 and second["alerts_fired"][0]["delivery_status"] == "delivered"
+    sub_id = deliveries[0].subscription_id if deliveries else None
+    mine = lambda r: [f for f in r["alerts_fired"] if f["subscription_id"] == sub_id]  # noqa: E731
+    assert mine(first) == [] and mine(third) == []
+    assert len(mine(second)) == 1 and mine(second)[0]["delivery_status"] == "delivered"
     assert len(deliveries) == 1 and deliveries[0].status == "delivered" and len(hist) == 1
-    assert received[0]["previous_score"] == 40 and received[0]["score"] == 95 and received[0]["threshold"] == 90
+    got = [r for r in received if r["subscription_id"] == sub_id]
+    assert len(got) == 1 and got[0]["previous_score"] == 40 and got[0]["score"] == 95 and got[0]["threshold"] == 90

@@ -22,9 +22,9 @@ def crossed(previous: int | None, new: int, threshold: int) -> bool:
 
 
 async def latest_score(db: AsyncSession, material_id: int) -> int | None:
-    row = (await db.execute(select(DisruptionScore.score).where(DisruptionScore.material_id == material_id)
-                            .order_by(desc(DisruptionScore.computed_at), desc(DisruptionScore.id)).limit(1))).first()
-    return row[0] if row else None
+    return (await db.execute(select(DisruptionScore.score).where(DisruptionScore.material_id == material_id)
+                             .order_by(desc(DisruptionScore.computed_at), desc(DisruptionScore.id)).limit(1))
+            ).scalar_one_or_none()
 
 
 async def process_new_score(db: AsyncSession, material: Material, new_score: int, previous: int | None,
@@ -58,6 +58,5 @@ async def record_score(db: AsyncSession, material: Material, score: int, factors
                        client=None) -> dict:
     previous = await latest_score(db, material.id)
     db.add(DisruptionScore(material_id=material.id, score=score, factors=factors or {}))
-    await db.flush()
     fired = await process_new_score(db, material, score, previous, factors, client=client)
     return {"material": material.name, "previous_score": previous, "score": score, "alerts_fired": fired}
