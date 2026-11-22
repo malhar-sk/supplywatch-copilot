@@ -1,0 +1,2 @@
+# False positive: generic-api-key regex spans the empty 'JWT_SECRET=' line into 'JWT_TTL_SECONDS=900' (no secret).
+c0e1df96e456f691fddfd300a37868af5fee2172:.env.example:generic-api-key:17
