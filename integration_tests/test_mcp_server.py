@@ -69,3 +69,26 @@ def test_mcp_client_lists_tools_and_calls_signal(api_url):
     data = json.loads(res.content[0].text)
     assert data["material"] == "Lithium" and 0 <= data["score"] <= 100
     assert "unknown material" in json.loads(bad.content[0].text)["error"]
+
+
+def test_mcp_server_with_oauth_client_credentials(api_url):
+    key = httpx.post(f"{api_url}/auth/keys", json={"company_name": "MCP oauth", "tier": "pro"}).json()["data"]["api_key"]
+    cred = httpx.post(f"{api_url}/oauth/clients", headers={"X-API-Key": key},
+                      json={"name": "claude-desktop", "scopes": ["read:materials", "ask"]}).json()["data"]
+    env = {k: v for k, v in os.environ.items() if k != "SUPPLYWATCH_API_KEY"}
+    env.update(SUPPLYWATCH_API_URL=api_url, SUPPLYWATCH_CLIENT_ID=cred["client_id"],
+               SUPPLYWATCH_CLIENT_SECRET=cred["client_secret"])
+    params = StdioServerParameters(command=sys.executable, args=[str(ROOT / "mcp_server" / "server.py")], env=env)
+
+    async def _run():
+        async with stdio_client(params) as (read, write):
+            async with ClientSession(read, write) as session:
+                await session.initialize()
+                mats = await session.call_tool("list_materials", {})
+                exp = await session.call_tool("supplier_exposure", {"material": "Gallium", "country": "China"})
+                return mats, exp
+
+    mats, exp = asyncio.run(_run())
+    names = {m["name"] for m in json.loads(mats.content[0].text)}
+    assert {"Lithium", "Gallium", "Rare Earths"} <= names
+    assert json.loads(exp.content[0].text)["matches"][0]["company"] == "Lumen Semiconductor Substrates"

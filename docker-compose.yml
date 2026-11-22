@@ -63,7 +63,7 @@ services:
       NODE_FUNCTION_ALLOW_BUILTIN: "crypto,fs"
       N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "false"
       GENERIC_TIMEZONE: UTC
-      WEBHOOK_SIGNING_SECRET: ${WEBHOOK_SIGNING_SECRET:-dev-webhook-secret}
+      WEBHOOK_SIGNING_SECRET: ${WEBHOOK_SIGNING_SECRET:-dev-webhook-secret}  # must match the API (same .env)
       TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
       TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
     ports:

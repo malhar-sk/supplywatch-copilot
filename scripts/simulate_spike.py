@@ -35,7 +35,7 @@ def env_file() -> dict:
 def admin_headers(c: httpx.Client, api_key: str, cfg: dict) -> dict:
     """OAuth2 client-credentials token with the `admin` scope. Creating an admin-scoped
     client needs the ADMIN_BOOTSTRAP_SECRET from .env."""
-    secret = os.environ.get("ADMIN_BOOTSTRAP_SECRET") or cfg.get("ADMIN_BOOTSTRAP_SECRET", "")
+    secret = os.environ.get("ADMIN_BOOTSTRAP_SECRET") or cfg.get("ADMIN_BOOTSTRAP_SECRET") or "dev-admin-secret"
     r = c.post("/oauth/clients", headers={"X-API-Key": api_key, "X-Admin-Secret": secret},
                json={"name": "spike-simulator", "scopes": ["admin"]})
     if r.status_code != 200:

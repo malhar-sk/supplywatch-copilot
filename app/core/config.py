@@ -1,6 +1,13 @@
 from functools import lru_cache
 
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+DEV_DEFAULTS = {
+    "jwt_secret": "dev-only-jwt-secret-change-me-0123456789abcdef",
+    "webhook_signing_secret": "dev-webhook-secret",
+    "admin_bootstrap_secret": "dev-admin-secret",
+}
 
 
 class Settings(BaseSettings):
@@ -35,14 +42,21 @@ class Settings(BaseSettings):
     refusal_min_similarity: float = 0.62
 
     # OAuth2 client-credentials
-    jwt_secret: str = "change-me-dev-only-secret-at-least-32-bytes"
+    jwt_secret: str = DEV_DEFAULTS["jwt_secret"]
     jwt_ttl_seconds: int = 900
-    admin_bootstrap_secret: str = ""
+    admin_bootstrap_secret: str = DEV_DEFAULTS["admin_bootstrap_secret"]
 
     # Outgoing webhooks
-    webhook_signing_secret: str = "dev-webhook-secret"
+    webhook_signing_secret: str = DEV_DEFAULTS["webhook_signing_secret"]
     webhook_max_attempts: int = 4
     webhook_backoff_base_seconds: float = 0.5
+
+    @field_validator("jwt_secret", "webhook_signing_secret", "admin_bootstrap_secret", mode="before")
+    @classmethod
+    def _empty_means_dev_default(cls, v, info):
+        # .env.example ships these empty; empty -> the documented local-dev default
+        # (so the API and n8n agree out of the box). Set real values for anything shared.
+        return v if v else DEV_DEFAULTS[info.field_name]
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
