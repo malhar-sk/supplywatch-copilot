@@ -1,2 +1,6 @@
+# Host / CI: app deps + test + MCP server + eval tooling
+-r app/requirements.txt
+-r mcp_server/requirements.txt
 pytest==8.3.5
 pytest-asyncio==0.26.0
+pypdf>=5

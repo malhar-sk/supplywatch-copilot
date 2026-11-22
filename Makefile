@@ -34,8 +34,8 @@ eval-retrieval: ## retrieval-only metrics (no LLM, fast)
 corpus:        ## rebuild data/corpus (fetches USGS PDFs + generates synthetic docs)
 	$(PY) scripts/build_corpus.py
 
-mcp:           ## run the MCP server on stdio
-	$(PY) -m mcp_server.server
+mcp:           ## run the MCP server on stdio (needs SUPPLYWATCH_API_KEY)
+	$(PY) mcp_server/server.py
 
 simulate:      ## force a threshold crossing -> signed webhook -> n8n -> alerts.csv
 	$(PY) scripts/simulate_spike.py
