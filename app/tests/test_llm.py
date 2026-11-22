@@ -76,7 +76,9 @@ def test_rrf_fuses_rankings():
     a = [_hit(1, "a"), _hit(2, "b"), _hit(3, "c")]
     b = [_hit(3, "c"), _hit(2, "b")]
     fused = rrf([a, b])
-    assert [h.document_id for h in fused][:2] == ["b", "c"]  # in both lists -> ahead of 'a'
+    order = [h.document_id for h in fused]
+    assert set(order[:2]) == {"b", "c"} and order[2] == "a"  # in both lists -> ahead of "a"
+    assert fused[0].score == pytest.approx(1 / 63 + 1 / 61)  # c: rank 3 + rank 1
 
 
 def test_helpers():
