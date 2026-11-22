@@ -1,0 +1,427 @@
+{
+  "synthetic": true,
+  "note": "FICTIONAL companies for demo purposes",
+  "suppliers": [
+    {
+      "company": "Halvorsen Battery Materials",
+      "hq": "Norway",
+      "tier": 1,
+      "materials": [
+        {
+          "material": "Lithium",
+          "country": "Chile",
+          "share_pct": 60
+        },
+        {
+          "material": "Lithium",
+          "country": "Australia",
+          "share_pct": 40
+        },
+        {
+          "material": "Nickel",
+          "country": "Indonesia",
+          "share_pct": 100
+        }
+      ]
+    },
+    {
+      "company": "Kivu Cobalt Logistics",
+      "hq": "Zambia",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Cobalt",
+          "country": "DRC",
+          "share_pct": 85
+        },
+        {
+          "material": "Cobalt",
+          "country": "Zambia",
+          "share_pct": 15
+        }
+      ]
+    },
+    {
+      "company": "Lumen Semiconductor Substrates",
+      "hq": "Taiwan",
+      "tier": 1,
+      "materials": [
+        {
+          "material": "Gallium",
+          "country": "China",
+          "share_pct": 70
+        },
+        {
+          "material": "Gallium",
+          "country": "Japan",
+          "share_pct": 30
+        },
+        {
+          "material": "Germanium",
+          "country": "China",
+          "share_pct": 55
+        },
+        {
+          "material": "Germanium",
+          "country": "Belgium",
+          "share_pct": 45
+        }
+      ]
+    },
+    {
+      "company": "Redwater Rare Earth Separation",
+      "hq": "Canada",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Rare Earths",
+          "country": "China",
+          "share_pct": 50
+        },
+        {
+          "material": "Rare Earths",
+          "country": "Australia",
+          "share_pct": 35
+        },
+        {
+          "material": "Rare Earths",
+          "country": "Myanmar",
+          "share_pct": 15
+        }
+      ]
+    },
+    {
+      "company": "Tidewater Magnetics",
+      "hq": "United States",
+      "tier": 1,
+      "materials": [
+        {
+          "material": "Rare Earths",
+          "country": "China",
+          "share_pct": 80
+        },
+        {
+          "material": "Rare Earths",
+          "country": "Vietnam",
+          "share_pct": 20
+        }
+      ]
+    },
+    {
+      "company": "Verdant Anode Co.",
+      "hq": "South Korea",
+      "tier": 1,
+      "materials": [
+        {
+          "material": "Graphite",
+          "country": "China",
+          "share_pct": 75
+        },
+        {
+          "material": "Graphite",
+          "country": "Mozambique",
+          "share_pct": 25
+        }
+      ]
+    },
+    {
+      "company": "Bellmont Tungsten Tools",
+      "hq": "Germany",
+      "tier": 1,
+      "materials": [
+        {
+          "material": "Tungsten",
+          "country": "China",
+          "share_pct": 65
+        },
+        {
+          "material": "Tungsten",
+          "country": "Vietnam",
+          "share_pct": 20
+        },
+        {
+          "material": "Tungsten",
+          "country": "Austria",
+          "share_pct": 15
+        }
+      ]
+    },
+    {
+      "company": "Saffron Flame Retardants",
+      "hq": "India",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Antimony",
+          "country": "China",
+          "share_pct": 45
+        },
+        {
+          "material": "Antimony",
+          "country": "Tajikistan",
+          "share_pct": 35
+        },
+        {
+          "material": "Antimony",
+          "country": "Turkey",
+          "share_pct": 20
+        }
+      ]
+    },
+    {
+      "company": "Ironbark Manganese Sales",
+      "hq": "Australia",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Manganese",
+          "country": "South Africa",
+          "share_pct": 55
+        },
+        {
+          "material": "Manganese",
+          "country": "Gabon",
+          "share_pct": 25
+        },
+        {
+          "material": "Manganese",
+          "country": "Australia",
+          "share_pct": 20
+        }
+      ]
+    },
+    {
+      "company": "Sulawesi Nickel Processing JV",
+      "hq": "Indonesia",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Nickel",
+          "country": "Indonesia",
+          "share_pct": 100
+        },
+        {
+          "material": "Cobalt",
+          "country": "Indonesia",
+          "share_pct": 100
+        }
+      ]
+    },
+    {
+      "company": "Cordillera Lithium Partners",
+      "hq": "Argentina",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Lithium",
+          "country": "Argentina",
+          "share_pct": 70
+        },
+        {
+          "material": "Lithium",
+          "country": "Chile",
+          "share_pct": 30
+        }
+      ]
+    },
+    {
+      "company": "Kairos Cathode Works",
+      "hq": "Poland",
+      "tier": 1,
+      "materials": [
+        {
+          "material": "Nickel",
+          "country": "Indonesia",
+          "share_pct": 60
+        },
+        {
+          "material": "Nickel",
+          "country": "Canada",
+          "share_pct": 40
+        },
+        {
+          "material": "Cobalt",
+          "country": "DRC",
+          "share_pct": 70
+        },
+        {
+          "material": "Cobalt",
+          "country": "Australia",
+          "share_pct": 30
+        },
+        {
+          "material": "Manganese",
+          "country": "South Africa",
+          "share_pct": 100
+        },
+        {
+          "material": "Lithium",
+          "country": "Australia",
+          "share_pct": 100
+        }
+      ]
+    },
+    {
+      "company": "Aurora Fiber Optics Supply",
+      "hq": "Finland",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Germanium",
+          "country": "China",
+          "share_pct": 40
+        },
+        {
+          "material": "Germanium",
+          "country": "Canada",
+          "share_pct": 35
+        },
+        {
+          "material": "Germanium",
+          "country": "Belgium",
+          "share_pct": 25
+        }
+      ]
+    },
+    {
+      "company": "Pemberton Steel Additives",
+      "hq": "United Kingdom",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Manganese",
+          "country": "Gabon",
+          "share_pct": 60
+        },
+        {
+          "material": "Manganese",
+          "country": "South Africa",
+          "share_pct": 40
+        },
+        {
+          "material": "Tungsten",
+          "country": "China",
+          "share_pct": 100
+        }
+      ]
+    },
+    {
+      "company": "Mekong Metals Refining",
+      "hq": "Vietnam",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Tungsten",
+          "country": "Vietnam",
+          "share_pct": 100
+        },
+        {
+          "material": "Rare Earths",
+          "country": "Vietnam",
+          "share_pct": 100
+        }
+      ]
+    },
+    {
+      "company": "Qasr Minerals Trading",
+      "hq": "United Arab Emirates",
+      "tier": 3,
+      "materials": [
+        {
+          "material": "Antimony",
+          "country": "Russia",
+          "share_pct": 60
+        },
+        {
+          "material": "Antimony",
+          "country": "Tajikistan",
+          "share_pct": 40
+        },
+        {
+          "material": "Gallium",
+          "country": "Russia",
+          "share_pct": 100
+        }
+      ]
+    },
+    {
+      "company": "Ostrava Precision Alloys",
+      "hq": "Czechia",
+      "tier": 1,
+      "materials": [
+        {
+          "material": "Tungsten",
+          "country": "Austria",
+          "share_pct": 50
+        },
+        {
+          "material": "Tungsten",
+          "country": "China",
+          "share_pct": 50
+        },
+        {
+          "material": "Cobalt",
+          "country": "DRC",
+          "share_pct": 100
+        }
+      ]
+    },
+    {
+      "company": "Lakeshore Graphite Recycling",
+      "hq": "United States",
+      "tier": 2,
+      "materials": [
+        {
+          "material": "Graphite",
+          "country": "United States",
+          "share_pct": 60
+        },
+        {
+          "material": "Graphite",
+          "country": "Madagascar",
+          "share_pct": 40
+        }
+      ]
+    }
+  ],
+  "customer": {
+    "company": "Acme Drives (fictional demo customer)",
+    "products": [
+      {
+        "product": "EV traction inverter",
+        "suppliers": [
+          "Lumen Semiconductor Substrates",
+          "Tidewater Magnetics"
+        ]
+      },
+      {
+        "product": "48V battery pack",
+        "suppliers": [
+          "Halvorsen Battery Materials",
+          "Kairos Cathode Works",
+          "Verdant Anode Co."
+        ]
+      },
+      {
+        "product": "Industrial cutting tool line",
+        "suppliers": [
+          "Bellmont Tungsten Tools",
+          "Ostrava Precision Alloys"
+        ]
+      },
+      {
+        "product": "Fire-safe cable jacketing",
+        "suppliers": [
+          "Saffron Flame Retardants"
+        ]
+      },
+      {
+        "product": "Infrared camera module",
+        "suppliers": [
+          "Aurora Fiber Optics Supply",
+          "Lumen Semiconductor Substrates"
+        ]
+      }
+    ]
+  }
+}

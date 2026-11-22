@@ -12,3 +12,4 @@ n8n_data/*
 !n8n_data/alerts.sample.csv
 evals/cache/
 *.egg-info/
+data/.pdf_cache/

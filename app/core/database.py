@@ -1,15 +1,21 @@
+import os
 from datetime import date, datetime, timezone
 from typing import AsyncGenerator
 
 from sqlalchemy import JSON, Date, DateTime, ForeignKey, Integer, String, Text, UniqueConstraint
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+from sqlalchemy.pool import NullPool
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 from core.config import get_settings
 
 settings = get_settings()
-engine = create_async_engine(settings.database_url, future=True, echo=False)
+# Copilot addition: DB_NULLPOOL=1 (set by the test suite) disables pooling so
+# connections are never reused across the many short-lived event loops that
+# asyncio.run()/TestClient create in tests. Production keeps the default pool.
+_engine_kwargs = {"poolclass": NullPool} if os.environ.get("DB_NULLPOOL") == "1" else {}
+engine = create_async_engine(settings.database_url, future=True, echo=False, **_engine_kwargs)
 AsyncSessionLocal = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
 
 

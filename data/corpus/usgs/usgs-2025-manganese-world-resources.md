@@ -1,0 +1,13 @@
+id: usgs-2025-manganese-world-resources
+title: USGS MCS 2025 - Manganese - World Resources
+material: Manganese
+doc_type: usgs_mcs
+source: U.S. Geological Survey, Mineral Commodity Summaries 2025
+source_url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-manganese.pdf
+fetched_at: 2026-11-22
+synthetic: false
+license: Public domain (U.S. Government work)
+---
+World Resources:10 Land-based manganese resources are large but irregularly distributed; those in the
+United States are very low grade and have potentially high extraction costs. South Africa accounts for an estimated
+70% of the world’s manganese resources.

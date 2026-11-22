@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     retrieval_mode: str = "hybrid"           # vector | hybrid
     retrieval_top_k: int = 5
     # Minimum cosine similarity of the best chunk; below it /ask refuses.
-    refusal_min_similarity: float = 0.60
+    refusal_min_similarity: float = 0.62
 
     # OAuth2 client-credentials
     jwt_secret: str = "change-me-dev-only-secret-at-least-32-bytes"

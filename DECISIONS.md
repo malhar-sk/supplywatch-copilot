@@ -15,3 +15,4 @@
    API key. So the LLM layer has backends: `anthropic` (SDK, used when a key is set, e.g. on your
    laptop), `claude_cli` (shells out to `claude -p`, used on the build host for the recorded agent
    run and the evals), `fake` (tests/CI), `none` (extractive fallback, no LLM).
+7. **Source bug fixed:** lifespan called `scheduler.shutdown()` even when the scheduler was disabled, crashing app shutdown. Now guarded with `if scheduler.running`.
