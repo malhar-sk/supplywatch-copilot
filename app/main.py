@@ -9,6 +9,7 @@ from sqlalchemy import select, text
 from api.auth import require_api_key
 from api.routes.alerts import router as alerts_router
 from api.routes.ask import router as ask_router
+from api.routes.copilot import router as copilot_router
 from api.routes.guest import router as guest_router
 from api.routes.health import router as health_router
 from api.routes.materials import router as materials_router
@@ -62,6 +63,7 @@ app.include_router(materials_router)
 app.include_router(alerts_router)
 app.include_router(guest_router)
 app.include_router(ask_router)
+app.include_router(copilot_router)
 
 @app.post('/auth/keys')
 async def create_key(payload: CreateApiKeyRequest):

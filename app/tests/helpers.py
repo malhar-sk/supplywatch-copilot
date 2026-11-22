@@ -46,3 +46,20 @@ def new_api_key(client: TestClient, tier: str = "pro") -> str:
     r = client.post("/auth/keys", json={"company_name": "TestCo", "tier": tier})
     assert r.status_code == 200
     return r.json()["data"]["api_key"]
+
+
+def seed_db():
+    """Materials + synthetic history (same as `make seed --no-corpus`)."""
+    import importlib.util
+
+    from core.database import engine
+
+    spec = importlib.util.spec_from_file_location("seed_script", REPO / "app" / "scripts" / "seed.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+
+    async def _run():
+        await engine.dispose()
+        return await mod.seed_materials_and_history()
+
+    return asyncio.run(_run())

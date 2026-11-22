@@ -1,0 +1,49 @@
+{
+  "question": "Our EV inverter line depends on gallium. How risky is gallium right now, how has the score moved this month, which of our suppliers are exposed, and what does USGS say about China's export controls?",
+  "answer": "Gallium is at an elevated risk score of 84/100 as of 2026-11-22 (SupplyWatch get_material_signal), driven mainly by trade (92), then price (89) and export (77); primary producers are China and Russia. Over the last 30 days (get_material_history) the score rose from 74 to 84 (+10), with a range of 64 to 84. The daily series is noisy, dipping to about 66-68 in early November before recovering to 79 on Nov 22. Exposed suppliers (fictional demo data from supplier_exposure): Lumen Semiconductor Substrates (Taiwan, Tier 1) sources 70% of its gallium from China and 30% from Japan and supplies your EV traction inverter, so it is your most direct exposure. Qasr Minerals Trading (UAE, Tier 3) sources 100% from Russia but has no linked products. USGS MCS 2025 (search_documents) says China's government implemented gallium export controls in August 2023, requiring licensing by Chinese exporters. Exports fell for the rest of 2023 and recovered in 2024 as licenses were granted. USGS MCS 2024 also notes the controls prompted the US and other countries to consider starting or restarting domestic primary gallium production.",
+  "trace": [
+    {
+      "step": 1,
+      "tool": "get_material_signal",
+      "args": {
+        "material": "gallium"
+      },
+      "result_preview": "{\"material_id\": 5, \"material\": \"Gallium\", \"score\": 84, \"band\": \"elevated\", \"factors\": {\"price\": 89, \"trade\": 92, \"export\": 77}, \"dominant_factor\": \"trade\", \"as_of\": \"2026-11-22T12:00:00+00:00\", \"primary_producers\": [\"China\", \"Russia\"]}"
+    },
+    {
+      "step": 1,
+      "tool": "get_material_history",
+      "args": {
+        "material": "gallium",
+        "days": 30
+      },
+      "result_preview": "{\"material_id\": 5, \"material\": \"Gallium\", \"days\": 30, \"n_readings\": 120, \"first\": 74, \"last\": 84, \"delta\": 10, \"min\": 64, \"max\": 84, \"daily\": [{\"date\": \"2026-10-23\", \"score\": 74.0}, {\"date\": \"2026-10-24\", \"score\": 73.0}, {\"date\": \"2026-10-25\", \"score\": 74.8}, {\"date\": \"2026-10-26\", \"score\": 76.0}, {\"date\": \"2026-10-27\", \"score\": 74.5}, {\"date\": \"2026-10-28\", \"score\": 72.8}, {\"date\": \"2026-10-29\", \"score\": 73.5}, {\"date\": \"2026-10-30\", \"score\": 78.8}, {\"date\": \"2026-10-31\", \"score\": 80.5}, {\"date\": \"2026-11-01\", \"score\": 78.2}, {\"date\": \"2026-11-02\", \"score\": 75.2}, {\"date\": \"2026-11-03\", \"scor..."
+    },
+    {
+      "step": 1,
+      "tool": "supplier_exposure",
+      "args": {
+        "material": "gallium"
+      },
+      "result_preview": "{\"query\": {\"company\": null, \"material\": \"gallium\", \"country\": null}, \"synthetic\": true, \"note\": \"Supplier directory is FICTIONAL demo data.\", \"matches\": [{\"company\": \"Lumen Semiconductor Substrates\", \"hq\": \"Taiwan\", \"tier\": 1, \"sourcing\": [{\"material\": \"Gallium\", \"country\": \"China\", \"share_pct\": 70}, {\"material\": \"Gallium\", \"country\": \"Japan\", \"share_pct\": 30}], \"acme_products\": [\"EV traction inverter\", \"Infrared camera module\"]}, {\"company\": \"Qasr Minerals Trading\", \"hq\": \"United Arab Emirates\", \"tier\": 3, \"sourcing\": [{\"material\": \"Gallium\", \"country\": \"Russia\", \"share_pct\": 100}], \"acme_pro..."
+    },
+    {
+      "step": 1,
+      "tool": "search_documents",
+      "args": {
+        "query": "gallium China export controls"
+      },
+      "result_preview": "{\"query\": \"gallium China export controls\", \"results\": [{\"chunk_id\": 459, \"document_id\": \"usgs-2025-gallium-events-trends-and-issues\", \"title\": \"USGS MCS 2025 - Gallium - Events Trends And Issues\", \"source\": \"U.S. Geological Survey, Mineral Commodity Summaries 2025\", \"source_url\": \"https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-gallium.pdf\", \"synthetic\": false, \"similarity\": 0.8390520619216576, \"score\": 0.03278688524590164, \"n\": 1, \"snippet\": \"Events, Trends, and Issues: Imports of gallium metal, GaAs wafers, and GaN wafers and domestic production of\\nGaAs and GaN wafers continued to account..."
+    }
+  ],
+  "model": "claude-sonnet-5-5",
+  "usage": {
+    "input_tokens": 5442,
+    "output_tokens": 548
+  },
+  "latency_ms": 14566.8,
+  "recorded_at": "2026-11-22T12:05:49.511153+00:00",
+  "backend": "claude_cli",
+  "agent_model": "claude-sonnet-5-5",
+  "note": "Live run. Score history is SYNTHETIC seed data; supplier data is FICTIONAL."
+}
