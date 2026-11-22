@@ -16,3 +16,17 @@
    laptop), `claude_cli` (shells out to `claude -p`, used on the build host for the recorded agent
    run and the evals), `fake` (tests/CI), `none` (extractive fallback, no LLM).
 7. **Source bug fixed:** lifespan called `scheduler.shutdown()` even when the scheduler was disabled, crashing app shutdown. Now guarded with `if scheduler.running`.
+8. **Alerts are edge-triggered.** The source re-sent an unsigned webhook on every 6-hourly run
+   while score >= threshold. Now `webhooks/alerts.py` fires once when a score crosses a threshold
+   upward (previous < threshold <= new), signs it (HMAC-SHA256 over `"<ts>.<raw body>"`), retries
+   on network errors/408/425/429/5xx with exponential backoff, and logs every attempt in
+   `webhook_deliveries`. One shared signing secret (`WEBHOOK_SIGNING_SECRET`) rather than one per
+   subscription, so the n8n workflow can verify with a single env var.
+9. **n8n pinned to 1.123.99** (stable 1.x line). The workflow is generated from
+   `n8n/build_workflow.py`, imported and activated automatically on container start. Verification
+   and CSV append use Code nodes (`NODE_FUNCTION_ALLOW_BUILTIN=crypto,fs`) because HMAC needs the raw body.
+10. **Telegram token empty on the build host**, so the workflow takes the "log instead" branch and
+    writes `n8n_data/telegram_mock.log`. Set `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` to send for real.
+11. **Retrieval "improvement" chosen after looking at golden-set retrieval numbers.** I tried
+    hybrid RRF (no gain), cross-encoder rerank over 40 candidates (good but ~5.7 s/query) and over
+    the top 10 (kept). That is selection on the test set with 3 candidates; there is no separate dev set.

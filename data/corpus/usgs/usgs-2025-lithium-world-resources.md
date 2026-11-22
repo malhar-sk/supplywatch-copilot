@@ -8,7 +8,7 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-World Resources:4 Owing to continuing exploration, measured and indicated lithium resources have increased
+World Resources: Owing to continuing exploration, measured and indicated lithium resources have increased
 substantially worldwide and total about 115 million tons. Measured and indicated lithium resources in the
 United States—from continental brines, claystone, geothermal brines, hectorite, oilfield brines, and pegmatites—are
 19 million tons. Measured and indicated lithium resources in other countries have been revised to 96 million tons.

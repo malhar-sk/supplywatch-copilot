@@ -7,8 +7,8 @@ WORKDIR /app
 RUN pip install --no-cache-dir torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt pytest==8.3.5 pytest-asyncio==0.26.0
-# Bake the embedding model into the image (no download at runtime).
-RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('BAAI/bge-small-en-v1.5')"
+# Bake the embedding + reranker models into the image (no download at runtime).
+RUN python -c "from sentence_transformers import SentenceTransformer, CrossEncoder; SentenceTransformer('BAAI/bge-small-en-v1.5'); CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')"
 COPY . .
 EXPOSE 8000
 # Source Dockerfile used --port 8050 while EXPOSEing 8000; unified on 8000.

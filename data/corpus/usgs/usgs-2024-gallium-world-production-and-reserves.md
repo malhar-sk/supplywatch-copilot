@@ -10,11 +10,11 @@ license: Public domain (U.S. Government work)
 ---
 World Production and Reserves: Quantitative estimates of reserves were not available.
 Primary production Production capacity
-2022 2023e 2023
+2022 2023 2023
 United States — — —
-China  600,000 600,000 1,000,000
-Japane 3,000 3,000 10,000
-Korea, Republic ofe 2,000 2,000 16,000
-Russiae 5,000 5,000 10,000
-Other countries4          —          —      e88,000
-World total (rounded) 610,000 610,000 e1,100,000
+China 600,000 600,000 1,000,000
+Japan 3,000 3,000 10,000
+Korea, Republic of 2,000 2,000 16,000
+Russia 5,000 5,000 10,000
+Other countries — — 88,000
+World total (rounded) 610,000 610,000 1,100,000

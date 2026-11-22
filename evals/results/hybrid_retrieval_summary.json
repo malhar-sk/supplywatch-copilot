@@ -1,0 +1,26 @@
+{
+  "tag": "hybrid",
+  "mode": "hybrid",
+  "started_at": "2026-11-22T12:17:50.410699+00:00",
+  "golden_size": 50,
+  "command": "python -m evals.run_eval --mode hybrid --tag hybrid --retrieval-only",
+  "llm_backend": "claude_cli",
+  "answer_model": "claude-haiku-5-5",
+  "retrieval_only": true,
+  "n_questions": 50,
+  "n_answerable": 40,
+  "n_not_in_corpus": 10,
+  "hit_at_5": 0.95,
+  "mrr_at_5": 0.7779,
+  "recall_at_5": 0.925,
+  "hit_at_5_by_type": {
+    "exposure": 1.0,
+    "factual": 1.0,
+    "multi_doc": 0.75
+  },
+  "search_latency_ms": {
+    "p50": 64.5,
+    "p95": 90.3
+  },
+  "finished_at": "2026-11-22T12:17:54.109394+00:00"
+}

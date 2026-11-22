@@ -10,14 +10,14 @@ license: Public domain (U.S. Government work)
 ---
 World Mine Production and Reserves: Reserves for Australia, Russia, Thailand, and the United States were
 revised based on company and Government reports.
-Mine productione Reserves9
+Mine production Reserves
 2022 2023
 United States 42,000 43,000 1,800,000
-Australia 18,000 18,000 105,700,000
+Australia 18,000 18,000 5,700,000
 Brazil 80 80 21,000,000
 Burma 12,000 38,000 NA
 Canada — — 830,000
-China 11210,000 11240,000 44,000,000
+China 210,000 240,000 44,000,000
 Greenland — — 1,500,000
 India 2,900 2,900 6,900,000
 Madagascar 960 960 NA
@@ -26,5 +26,5 @@ Russia 2,600 2,600 10,000,000
 South Africa — — 790,000
 Tanzania — — 890,000
 Thailand 7,100 7,100 4,500
-Vietnam     1,200        600   22,000,000
+Vietnam 1,200 600 22,000,000
 World total (rounded) 300,000 350,000 110,000,000

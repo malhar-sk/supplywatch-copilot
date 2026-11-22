@@ -8,7 +8,7 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-World Resources:7 Globally, nickel resources have been estimated to contain more than 350 million tons of nickel,
+World Resources: Globally, nickel resources have been estimated to contain more than 350 million tons of nickel,
 with 54% in laterites and 35% in magmatic sulfide deposits. Hydrothermal systems such as iron-nickel alloy,
 sedimentary-hosted polymetallic, and volcanogenic massive sulfide deposits, as well as seafloor manganese crusts
 and nodules contain 10%, and miscellaneous resources such as tailings, 1%.

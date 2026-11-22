@@ -25,6 +25,7 @@ ton in January to approximately $730 per ton in November.
 Four brine operations in Argentina, nine mineral operations in Australia, one mineral tailings operation in Brazil,
 two mineral operations in Canada, two brine operations Chile, seven mineral and five brine operations in China, and
 four mineral operations in Zimbabwe accounted for the majority of world lithium production. Additionally, smaller
+11 1
 operations in Australia, Brazil, China, Namibia, Portugal, and the United States also contributed to world lithium
 production. Despite many lithium projects being postponed or cancelled in 2024 owing to low prices, significant
 production capacity expansions occurred in Argentina, Chile, China, and Zimbabwe.

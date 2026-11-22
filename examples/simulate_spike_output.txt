@@ -1,0 +1,7 @@
+1. subscribed #2: Gallium (current score 84) threshold 89 -> http://n8n:5678/webhook/supplywatch-risk
+2. baseline score 79 (previous 84): alerts fired = 0
+3. spike score 97: alerts fired = 1
+   webhook delivery #2 status=delivered attempts=1 event_id=3084592e-b3be-4349-a2a0-25cfe245f084
+   delivery log: [{'at': '2026-11-22T12:27:07.498408+00:00', 'attempt': 1, 'status_code': 200}]
+4. n8n wrote to n8n_data/alerts.csv:
+   2026-11-22T12:27:07.779Z,3084592e-b3be-4349-a2a0-25cfe245f084,risk.threshold_crossed,Gallium,79,97,89,elevated,2

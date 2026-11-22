@@ -16,7 +16,8 @@ router = APIRouter(tags=["copilot"])
 class AskRequest(BaseModel):
     question: str = Field(min_length=3, max_length=1000)
     material_id: int | None = None
-    mode: str | None = Field(default=None, pattern="^(vector|hybrid)$")
+    mode: str | None = Field(default=None, pattern="^(vector|hybrid|rerank)$")
+    include_contexts: bool = False  # return full retrieved chunk texts (used by the evals)
 
 
 @router.post("/ask", dependencies=[Depends(require_api_key)])
@@ -30,5 +31,7 @@ async def ask_route(payload: AskRequest, db: AsyncSession = Depends(get_db)):
     r = await ask(db, payload.question, material=material, mode=payload.mode)
     return {"data": {"answer": r.answer, "refused": r.refused, "citations": r.citations,
                      "retrieval_mode": r.retrieval_mode, "top_similarity": r.top_similarity,
-                     "usage": r.usage, "timings_ms": r.timings_ms, "material": material},
+                     "usage": r.usage, "timings_ms": r.timings_ms, "material": material,
+                     **({"contexts": r.contexts, "retrieved_doc_ids": r.retrieved_doc_ids}
+                        if payload.include_contexts else {})},
             "meta": {"timestamp": datetime.now(timezone.utc), "version": get_settings().app_version}}

@@ -14,17 +14,3 @@ applications include barium or strontium ferrites, neodymium-iron-boron alloys, 
 cerium, iron, lead, manganese, or vanadium in paints; cobalt-iron-copper or iron-copper in diamond tools; copperiron-manganese for curing unsaturated polyester resins; iron, iron-cobalt-nickel, nickel, ceramic-metallic composites
 (cermets), or ceramics in cutting and wear-resistant materials; nickel-base alloys or ceramics in jet engines; nickel in
 petroleum catalysts; rhodium in hydroformylation catalysts; and titanium-base alloys in prosthetics.
-eEstimated. NA Not available. — Zero.
-1Estimated from consumption of purchased scrap.
-2Includes reported data and U.S. Geological Survey estimates.
-3Defined for 2019–22 as secondary production + imports – exports ± adjustments for Government and industry stock changes for refined cobalt.
-Beginning in 2023, Government stock changes no longer included.
-4Source: S&P Global Platts Metals Week. Cobalt cathode is refined cobalt metal produced by an electrolytic process.
-5Stocks held by consumers and processors; excludes stocks held by trading companies and held for investment purposes.
-6Defined for 2019–22 as imports – exports ± adjustments for Government and industry stock changes for refined cobalt. Beginning in 2023,
-Government stock changes no longer included.
-7See Appendix B for definitions.
-8Samarium-cobalt alloy; excludes potential disposals of aerospace alloys.
-9See Appendix C for resource and reserve definitions and information concerning data sources.
-10For Australia, Joint Ore Reserves Committee-compliant or equivalent reserves were 610,000 tons.
-11Overseas territory of France.

@@ -1,9 +1,10 @@
 """Retrieval over pgvector.
 
 mode="vector"  baseline: cosine nearest neighbours on bge-small embeddings.
-mode="hybrid"  improvement: vector top-N  +  Postgres full-text (BM25-like
-               ts_rank_cd over an OR-query of the question's terms) top-N,
-               fused with Reciprocal Rank Fusion (k=60).
+mode="hybrid"  vector top-N  +  Postgres full-text (BM25-like ts_rank_cd over an
+               OR-query of the question's terms) top-N, fused with Reciprocal Rank Fusion (k=60).
+mode="rerank"  the top RERANK_CANDIDATES (10) hybrid results re-scored by a small
+               cross-encoder (ms-marco-MiniLM-L-6-v2, 320-token inputs); keep the best k.
 
 Every hit carries `similarity` (cosine similarity to the query), which the
 answerer uses for the refusal decision regardless of mode.
@@ -107,4 +108,14 @@ async def retrieve(db: AsyncSession, question: str, k: int = 5, mode: str = "hyb
         vec = await vector_search(db, qvec, CANDIDATES, material)
         kw = await keyword_search(db, question, qvec, CANDIDATES, material)
         return rrf([vec, kw])[:k]
+    if mode == "rerank":
+        from rag.rerank import RERANK_CANDIDATES, rerank_scores
+
+        vec = await vector_search(db, qvec, CANDIDATES, material)
+        kw = await keyword_search(db, question, qvec, CANDIDATES, material)
+        cands = rrf([vec, kw])[:RERANK_CANDIDATES]
+        scores = await asyncio.to_thread(rerank_scores, question, [h.text for h in cands])
+        for h, sc in zip(cands, scores):
+            h.score = sc
+        return sorted(cands, key=lambda h: h.score, reverse=True)[:k]
     raise ValueError(f"unknown retrieval mode {mode!r}")

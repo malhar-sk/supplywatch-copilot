@@ -10,16 +10,16 @@ license: Public domain (U.S. Government work)
 ---
 World Mine Production and Reserves: Reserves for Argentina, Australia, Brazil, China, the United States, and
 “Other countries” were revised based on company and Government reports.
-Mine production Reserves4
-2022 2023e
+Mine production Reserves
+2022 2023
 United States W W 1,100,000
 Argentina 6,590 9,600 3,600,000
-Australia 74,700 86,000 56,200,000
-Brazil e2,630 4,900 390,000
-Canada e520 3,400 930,000
+Australia 74,700 86,000 6,200,000
+Brazil 2,630 4,900 390,000
+Canada 520 3,400 930,000
 Chile 38,000 44,000 9,300,000
-China e22,600 33,000 3,000,000
-Portugal e380 380 60,000
-Zimbabwe e1,030 3,400 310,000
-Other countries6            —            —   2,800,000
-World total (rounded) 7146,000 7180,000 28,000,000
+China 22,600 33,000 3,000,000
+Portugal 380 380 60,000
+Zimbabwe 1,030 3,400 310,000
+Other countries — — 2,800,000
+World total (rounded) 146,000 180,000 28,000,000

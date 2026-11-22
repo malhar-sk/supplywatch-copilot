@@ -11,4 +11,4 @@ license: Public domain (U.S. Government work)
 Recycling: Refractory brick and linings, alumina-graphite refractories for continuous metal castings, magnesiagraphite refractory brick for basic oxygen and electric arc furnaces, and insulation brick was increasing, with material
 being recycled into products such as brake linings and thermal insulation. The abundance of graphite in the world
 market inhibits increased recycling efforts. Information on the quantity and value of recycled graphite is not available.
-Import Sources (2019–22): China,2 42%; Mexico, 16%; Canada, 15%; Madagascar, 12%; and other, 15%.
+Import Sources (2019–22): China, 42%; Mexico, 16%; Canada, 15%; Madagascar, 12%; and other, 15%.

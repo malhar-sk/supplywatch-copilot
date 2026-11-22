@@ -8,12 +8,12 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-Salient Statistics—United States: 2020 2021 2022 2023 2024e
+Salient Statistics—United States: 2020 2021 2022 2023 2024
 Production W W W W W
 Imports for consumption 2,460 2,640 3,260 3,390 3,300
 Exports 1,200 1,870 2,440 1,960 1,700
-Consumption, apparent1 W W W W W
-Price, annual average-real, battery-grade lithium carbonate,
-dollars per metric ton2 10,100 14,200 71,100 41,300 14,000
+Consumption, apparent W W W W W
+Price, annual average-real, battery-grade lithium carbonate, 10,100 14,200 71,100 41,300 14,000
+dollars per metric ton
 Employment, mine and mill, number 70 70 70 70 70
-Net import reliance3 as a percentage of apparent consumption >50 >25 >25 >50 >50
+Net import reliance as a percentage of apparent consumption >50 >25 >25 >50 >50

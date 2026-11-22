@@ -8,15 +8,9 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-Government Stockpile:7
+Government Stockpile:
 FY 2024 FY 2025
-Material
-Potential
-acquisitions
-Potential
-disposals
-Potential
-acquisitions
-Potential
-disposals
-Cobalt alloys, gross weight8 200 — 60 —
+Potential Potential Potential Potential
+Material acquisitions disposals acquisitions disposals
+Cobalt alloys, gross weight 200 — 60 —
+6 3

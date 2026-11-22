@@ -8,21 +8,21 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-Salient Statistics—United States: 2020 2021 2022 2023 2024e
+Salient Statistics—United States: 2020 2021 2022 2023 2024
 Production, refinery:
 Primary — — — — —
 Secondary NA NA NA NA NA
-Imports for consumption:e, 1
+Imports for consumption:
 Germanium metal 14,000 13,000 14,000 22,000 20,000
 Germanium dioxide 12,000 17,000 15,000 14,000 13,000
 Germanium tetrachloride NA NA NA NA NA
-Exports:e, 1
+Exports:
 Germanium metal 4,000 5,500 6,600 6,000 7,200
 Germanium dioxide 810 430 130 110 120
 Germanium tetrachloride NA NA NA NA NA
-Shipments from Government stockpile2 — — — NA NA
-Consumption, estimated3 30,000 30,000 NA NA NA
-Price, annual average, dollars per kilogram:4
+Shipments from Government stockpile — — — NA NA
+Consumption, estimated 30,000 30,000 NA NA NA
+Price, annual average, dollars per kilogram:
 Germanium metal 1,046 1,187 1,294 1,392 2,100
 Germanium dioxide 724 770 828 883 1,400
-Net import reliance5 as a percentage of estimated consumption >50 >50 >50 >50 >50
+Net import reliance as a percentage of estimated consumption >50 >50 >50 >50 >50

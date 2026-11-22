@@ -8,9 +8,9 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-World Resources:9 Identified cobalt resources of the United States are estimated to be about 1 million tons. Most of
+World Resources: Identified cobalt resources of the United States are estimated to be about 1 million tons. Most of
 these resources are in Minnesota. Other notable occurrences are in Alaska, California, Idaho, Michigan, Missouri,
 Montana, Oregon, and Pennsylvania. Identified world terrestrial cobalt resources are about 25 million tons. The vast
 majority of global resources are in sediment-hosted stratiform copper deposits in Congo (Kinshasa) and Zambia;
-nickel-bearing laterite deposits in Australia and nearby island countries and Cuba;  and magmatic nickel-copper sulfide
-deposits of mafic and ultramafic rocks in Australia, Canada, Russia, and the U nited States.
+nickel-bearing laterite deposits in Australia and nearby island countries and Cuba; and magmatic nickel-copper sulfide
+deposits of mafic and ultramafic rocks in Australia, Canada, Russia, and the United States.

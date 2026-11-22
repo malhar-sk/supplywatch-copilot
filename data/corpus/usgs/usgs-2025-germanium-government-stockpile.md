@@ -8,15 +8,9 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-Government Stockpile:6
+Government Stockpile:
 FY 2024 FY 2025
-Material
-Potential
-acquisitions
-Potential
-disposals
-Potential
-acquisitions
-Potential
-disposals
+Potential Potential Potential Potential
+Material acquisitions disposals acquisitions disposals
 Germanium (gross weight) — 5,000 — 5,000
+8 1

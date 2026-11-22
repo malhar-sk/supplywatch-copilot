@@ -15,6 +15,7 @@ from signals.models import MaterialSignal, missing_sources
 from signals.scorer import DisruptionScorer
 from snapshot.guest import run_guest_snapshot
 from snapshot.jobs import run_daily_snapshot
+from webhooks.alerts import record_score
 
 
 async def _fetch_material_raw(material_name: str) -> list[tuple[str, dict, MaterialSignal]]:
@@ -46,7 +47,6 @@ async def run_pipeline(db: AsyncSession | None = None):
             return await run_pipeline(owned_db)
 
     materials = (await db.execute(select(Material))).scalars().all()
-    dispatcher = AlertDispatcher()
 
     # Same split as snapshot/jobs.py: fetch every material's raw signals
     # concurrently (pure network I/O), then write to the shared DB session
@@ -68,18 +68,11 @@ async def run_pipeline(db: AsyncSession | None = None):
             print(f"[warn] skipping score and alerts for {material.name}: no data from {', '.join(missing)}")
             continue
         score, factors = DisruptionScorer.score(collected)
-        db.add(DisruptionScore(material_id=material.id, score=score, factors=factors))
-        subs = (
-            await db.execute(
-                select(AlertSubscription).where(
-                    AlertSubscription.material_id == material.id,
-                    AlertSubscription.threshold <= score,
-                )
-            )
-        ).scalars().all()
-        for sub in subs:
-            msg = await dispatcher.dispatch(sub, score)
-            db.add(AlertHistory(subscription_id=sub.id, score_at_trigger=score, message=msg))
+        # Copilot change: alerts are now edge-triggered (fire when the score crosses a
+        # subscriber's threshold) and webhooks are HMAC-signed with retry + a delivery
+        # log -- see webhooks/alerts.py. Previously every run with score >= threshold
+        # re-sent an unsigned webhook. Same DisruptionScore rows as before.
+        await record_score(db, material, score, factors)
     await db.commit()
 
 

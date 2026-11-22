@@ -8,18 +8,11 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-Government Stockpile:10 In the addition to the materials listed below, the fiscal year (FY) 2024 and 2025 potential
+Government Stockpile: In the addition to the materials listed below, the fiscal year (FY) 2024 and 2025 potential
 acquisitions included varying amounts of neodymium-praseodymium oxide, neodymium-iron-boron magnet block, and
 samarium-cobalt alloy.
 FY 2024 FY 2025
-Material
-Potential
-acquisitions
-Potential
-disposals
-Potential
-acquisitions
-Potential
-disposals
+Potential Potential Potential Potential
+Material acquisitions disposals acquisitions disposals
 Cerium 550 — — —
 Lanthanum 1,300 — 1,100 —

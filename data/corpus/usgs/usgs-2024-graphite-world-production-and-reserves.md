@@ -10,25 +10,25 @@ license: Public domain (U.S. Government work)
 ---
 World Mine Production and Reserves: Reserves for Canada, China, India, Madagascar, and Turkey were revised
 based on company and Government reports.
-Mine production Reserves3
-2022 2023e
-United States — — (4)
-Austria 500 500 (4)
-Brazil e72,000 73,000 74,000,000
+Mine production Reserves
+2022 2023
+United States — — ( )
+Austria 500 500 ( )
+Brazil 72,000 73,000 74,000,000
 Canada 13,000 3,500 5,700,000
 China 1,210,000 1,230,000 78,000,000
-Germany 170 150 (4)
+Germany 170 150 ( )
 India 11,000 11,500 8,600,000
-Korea, North e8,100 8,100 2,000,000
+Korea, North 8,100 8,100 2,000,000
 Korea, Republic of 23,800 27,000 1,800,000
-Madagascar e130,000 100,000 24,000,000
+Madagascar 130,000 100,000 24,000,000
 Mexico 2,000 2,000 3,100,000
 Mozambique 166,000 96,000 25,000,000
 Norway 10,380 7,200 600,000
-Russia e16,000 16,000 14,000,000
+Russia 16,000 16,000 14,000,000
 Sri Lanka 2,600 2,200 1,500,000
-Tanzania e6,120 6,000 18,000,000
+Tanzania 6,120 6,000 18,000,000
 Turkey 2,800 2,000 6,900,000
-Ukraine 1,000 2,000 (4)
-Vietnam           500           500                 (4)
+Ukraine 1,000 2,000 ( )
+Vietnam 500 500 ( )
 World total (rounded) 1,680,000 1,600,000 280,000,000

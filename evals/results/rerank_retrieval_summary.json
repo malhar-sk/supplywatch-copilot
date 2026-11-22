@@ -1,0 +1,26 @@
+{
+  "tag": "rerank",
+  "mode": "rerank",
+  "started_at": "2026-11-22T12:23:11.164640+00:00",
+  "golden_size": 50,
+  "command": "python -m evals.run_eval --mode rerank --tag rerank --retrieval-only",
+  "llm_backend": "claude_cli",
+  "answer_model": "claude-haiku-5-5",
+  "retrieval_only": true,
+  "n_questions": 50,
+  "n_answerable": 40,
+  "n_not_in_corpus": 10,
+  "hit_at_5": 1.0,
+  "mrr_at_5": 0.8187,
+  "recall_at_5": 0.975,
+  "hit_at_5_by_type": {
+    "exposure": 1.0,
+    "factual": 1.0,
+    "multi_doc": 1.0
+  },
+  "search_latency_ms": {
+    "p50": 1219.2,
+    "p95": 1732.9
+  },
+  "finished_at": "2026-11-22T12:24:14.906510+00:00"
+}

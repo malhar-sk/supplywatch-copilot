@@ -10,5 +10,5 @@ license: Public domain (U.S. Government work)
 ---
 Recycling: The estimated quantity of secondary tungsten produced and the amount consumed from secondary
 sources by processors and end users in 2023 were withheld to avoid disclosing company proprietary data.
-Import Sources (2019–22): Ores, concentrates, and other forms:1 China,8 27%; Germany, 12%; Bolivia, 9%;
+Import Sources (2019–22): Ores, concentrates, and other forms: China, 27%; Germany, 12%; Bolivia, 9%;
 Vietnam, 8%; and other, 44%.

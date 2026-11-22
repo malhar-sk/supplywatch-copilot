@@ -14,6 +14,6 @@ new scrap. Infrared lenses and windows in decommissioned military equipment are 
 germanium. Germanium is recycled from certain wastes generated during the manufacture of optical fibers.
 Germanium wafers used as substrates to produce solar cells are also recycled. Available information was inadequate
 to make reliable estimates of the amount of secondary germanium produced.
-Import Sources (2019–22):1, 6 Germanium metal: China, 54%; Belgium, 30%; Germany, 8%; Russia, 6%; and
+Import Sources (2019–22): Germanium metal: China, 54%; Belgium, 30%; Germany, 8%; Russia, 6%; and
 other, 2%. Germanium dioxide: Belgium, 47%; Canada, 46%; and other, 7%. Combined total: Belgium, 39%; China,
 26%; Canada, 25%; and other, 10%.

@@ -8,6 +8,6 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-World Resources:10 Land-based manganese resources are large but irregularly distributed; those in the
+World Resources: Land-based manganese resources are large but irregularly distributed; those in the
 United States are very low grade and have potentially high extraction costs. South Africa accounts for an estimated
 70% of the world’s manganese resources.

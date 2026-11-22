@@ -8,6 +8,6 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-World Resources:7 U.S. resources of antimony are mainly in Alaska, Idaho, Montana, and Nevada. Principal
+World Resources: U.S. resources of antimony are mainly in Alaska, Idaho, Montana, and Nevada. Principal
 identified world resources are in Australia, Bolivia, Burma, China, Mexico, Russia, South Africa, and Tajikistan.
 Additional antimony resources may occur in Mississippi Valley-type lead deposits in the Eastern United States.

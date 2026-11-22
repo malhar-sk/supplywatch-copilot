@@ -8,5 +8,6 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-Government Stockpile:6 The U.S. Department of Energy is holding approximately 9,700 tons of radiologically
+Government Stockpile: The U.S. Department of Energy is holding approximately 9,700 tons of radiologically
 contaminated nickel at Paducah, KY.
+12 5

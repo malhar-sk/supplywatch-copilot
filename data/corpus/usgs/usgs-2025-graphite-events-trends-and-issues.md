@@ -11,9 +11,9 @@ license: Public domain (U.S. Government work)
 Events, Trends, and Issues: U.S. natural graphite imports, by tonnage, were 20% lower during the first 8 months of
 2024 compared with those in the same period in 2023. Apparent consumption decreased by an estimated 21%,
 attributed to decreased demand from the battery industry and increased availability of synthetic graphite battery
-material from China. Prices for fine flake graphite have decreased by 20% through the first 10 months of 2024.3
+material from China. Prices for fine flake graphite have decreased by 20% through the first 10 months of 2024.
 Prices for medium flake and larger have increased by about 10% through the first 10 months of 2024.
-In 2024, China was the world’s leading graphite producer, producing an estimated 78 % of total world production.
+In 2024, China was the world’s leading graphite producer, producing an estimated 78% of total world production.
 Approximately 15% of graphite produced in China was amorphous and about 85% was flake. During the first 8
 months of the year, China exported 38,200 tons of flake graphite concentrate, 25% less than the 50,700 tons
 exported in the same period in 2023. Exports during the first 2 months of 2024 were 78% less compared with those in
@@ -29,8 +29,9 @@ million through the Defense Production Act, Title III, for the development of a 
 The other two projects were awarded $125 million each, through the Bipartisan Infrastructure Law of 2021. One was
 for the development of battery-grade graphite recycling facilities in Kentucky and Louisiana, and the other was to
 develop a coated spherical graphite production facility in Alabama.
+8 5
 In May, the U.S. Department of the Treasury announced temporary extensions for rules regarding graphite imports
-from China. The rules had originally barred graphite from China, among other  countries, for the electric vehicle tax
+from China. The rules had originally barred graphite from China, among other countries, for the electric vehicle tax
 credit eligibility. The temporary graphite exemption lasts until 2027. In May, the President announced an increase of
 the tariff rate on natural graphite sourced from China from 0% to 25% beginning in 2026.
 Five companies were exploring or developing graphite-mining projects in the United States: two in Alabama, one in

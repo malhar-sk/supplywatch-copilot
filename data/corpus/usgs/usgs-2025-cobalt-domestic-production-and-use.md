@@ -12,6 +12,6 @@ Domestic Production and Use: In 2024, the Eagle Mine, a nickel-copper mine in Mi
 nickel concentrate, which was exported to Canada or overseas for processing. Mining activity at a cobalt-copper-gold
 mine in Idaho remained suspended in 2024 owing to low cobalt prices. Most U.S. cobalt supply consisted of imports
 and secondary (scrap) materials. About five companies in the United States produced cobalt chemicals. An estimated
-51% of cobalt consumed in the United States was used in superalloys, mainly aircraft gas turbine engines; 2 5% in a
-variety of chemical applications; 15% in various other metallic applications; and 9 % in cemented carbides for cutting
+51% of cobalt consumed in the United States was used in superalloys, mainly aircraft gas turbine engines; 25% in a
+variety of chemical applications; 15% in various other metallic applications; and 9% in cemented carbides for cutting
 and wear-resistant applications. The total estimated value of cobalt consumed in 2024 was $260 million.

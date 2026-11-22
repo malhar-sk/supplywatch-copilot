@@ -12,5 +12,5 @@ Recycling: Manganese was recycled incidentally as a constituent of ferrous and n
 recovery specifically for manganese was negligible. Manganese is recovered along with iron from steel slag.
 Import Sources (2020–23): Manganese ore: Gabon, 63%; South Africa, 23%; Mexico, 13%; and other, 1%.
 Ferromanganese: Malaysia, 24%; Australia, 16%; Norway, 15%; South Africa, 14%; and other, 31%. Silicomanganese:
-Georgia, 26%; South Africa, 2 5%; Australia, 19%; Malaysia, 9%; and other, 21%. Manganese contained in principal
-manganese imports:7 Gabon, 24%; South Africa, 21%; Australia, 10%; Malaysia, 9%; and other, 36%.
+Georgia, 26%; South Africa, 25%; Australia, 19%; Malaysia, 9%; and other, 21%. Manganese contained in principal
+manganese imports: Gabon, 24%; South Africa, 21%; Australia, 10%; Malaysia, 9%; and other, 36%.

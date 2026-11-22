@@ -10,6 +10,6 @@ license: Public domain (U.S. Government work)
 ---
 Recycling: Limited quantities of rare earths were recovered from batteries, permanent magnets, and fluorescent
 lamps.
-Import Sources (2020–23): Rare-earth compounds and metals: China,9 70%; Malaysia, 13%; Japan, 6%; Estonia,
+Import Sources (2020–23): Rare-earth compounds and metals: China, 70%; Malaysia, 13%; Japan, 6%; Estonia,
 5%; and other, 6%. Compounds and metals imported from Estonia, Japan, and Malaysia were derived from mineral
 concentrates and chemical intermediates produced in Australia, China, and elsewhere.

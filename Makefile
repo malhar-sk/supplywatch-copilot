@@ -24,12 +24,12 @@ test-docker:   ## app tests inside the api container
 
 eval:          ## RAGAS + retrieval/refusal metrics, baseline vs improved
 	$(PY) -m evals.run_eval --mode vector --tag baseline
-	$(PY) -m evals.run_eval --mode hybrid --tag improved
+	$(PY) -m evals.run_eval --mode rerank --tag improved
 	$(PY) -m evals.report
 
 eval-retrieval: ## retrieval-only metrics (no LLM, fast)
 	$(PY) -m evals.run_eval --mode vector --tag baseline --retrieval-only
-	$(PY) -m evals.run_eval --mode hybrid --tag improved --retrieval-only
+	$(PY) -m evals.run_eval --mode rerank --tag improved --retrieval-only
 
 corpus:        ## rebuild data/corpus (fetches USGS PDFs + generates synthetic docs)
 	$(PY) scripts/build_corpus.py

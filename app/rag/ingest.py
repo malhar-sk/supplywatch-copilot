@@ -75,7 +75,13 @@ async def ingest_corpus_dir(corpus_dir: Path | str | None = None) -> dict:
     root = Path(corpus_dir or DEFAULT_CORPUS)
     files = sorted(root.rglob("*.md"))
     docs = [parse_doc(f.read_text(encoding="utf-8")) for f in files]
-    return await ingest_documents(docs)
+    out = await ingest_documents(docs)
+    # full-corpus ingest = sync: drop documents that no longer exist on disk
+    async with AsyncSessionLocal() as db:
+        res = await db.execute(delete(Document).where(Document.id.not_in([m["id"] for m, _ in docs])))
+        await db.commit()
+    out["pruned"] = res.rowcount
+    return out
 
 
 if __name__ == "__main__":

@@ -1,0 +1,26 @@
+{
+  "tag": "vector",
+  "mode": "vector",
+  "started_at": "2026-11-22T12:17:36.138468+00:00",
+  "golden_size": 50,
+  "command": "python -m evals.run_eval --mode vector --tag vector --retrieval-only",
+  "llm_backend": "claude_cli",
+  "answer_model": "claude-haiku-5-5",
+  "retrieval_only": true,
+  "n_questions": 50,
+  "n_answerable": 40,
+  "n_not_in_corpus": 10,
+  "hit_at_5": 0.95,
+  "mrr_at_5": 0.8612,
+  "recall_at_5": 0.9417,
+  "hit_at_5_by_type": {
+    "exposure": 1.0,
+    "factual": 0.9545,
+    "multi_doc": 0.875
+  },
+  "search_latency_ms": {
+    "p50": 58.0,
+    "p95": 74.9
+  },
+  "finished_at": "2026-11-22T12:17:39.496358+00:00"
+}

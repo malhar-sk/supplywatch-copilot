@@ -32,7 +32,7 @@ class AgentRequest(BaseModel):
 class SearchRequest(BaseModel):
     query: str = Field(min_length=2, max_length=1000)
     k: int = Field(default=5, ge=1, le=10)
-    mode: str = Field(default="hybrid", pattern="^(vector|hybrid)$")
+    mode: str = Field(default="hybrid", pattern="^(vector|hybrid|rerank)$")
 
 
 class ReportRequest(BaseModel):

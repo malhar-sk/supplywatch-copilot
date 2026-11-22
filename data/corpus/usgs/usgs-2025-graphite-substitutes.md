@@ -13,9 +13,3 @@ compete for use in iron and steel production. Synthetic graphite powder and seco
 machining graphite shapes compete for use in battery applications. Finely ground coke with olivine is a potential
 competitor in foundry-facing applications. Molybdenum disulfide competes as a dry lubricant but is more sensitive to
 oxidizing conditions.
-eEstimated. — Zero.
-1Defined as imports – exports.
-2Includes Hong Kong.
-3Source: Fastmarkets IM.
-4See Appendix C for resource and reserve definitions and information concerning data sources.
-5Included in “World total.”

@@ -20,6 +20,7 @@ gallium prices increased in the first half of 2024 owing to global concern about
 China’s implementation of gallium export controls. The controls required all exports have a committed end which
 made rebuilding limited stock outside of China difficult. By October, primary low-purity gallium prices in China
 increased by 11% to $420 per kilogram as stocks outside of China depleted further.
+7 5
 China accounted for 99% of worldwide primary low-purity gallium production. The remaining primary low-purity
 gallium producers outside of China included Japan, the Republic of Korea, and Russia. Germany, Hungary, and
 Kazakhstan ceased primary production in 2016, 2015, and 2013, respectively. Ukraine most likely ceased primary
@@ -32,13 +33,3 @@ high-purity refined gallium. The United Kingdom ceased high-purity refined galli
 recovered from new scrap in Canada, China, Japan, Slovakia, and the United States. World high-purity refined
 gallium production capacity was an estimated 340,000 kilograms per year, and secondary high-purity gallium
 production capacity was an estimated 280,000 kilograms per year.
-World Low-Purity Production and Production Capacity:
-Primary production Production capacity
-2023 2024e 2024
-United States — — —
-China  4621,000 4750,000 1,000,000
-Japane 3,000 3,000 10,000
-Korea, Republic ofe 3,000 3,000 16,000
-Russiae 6,000 6,000 10,000
-Other countries5          —          —      e88,000
-World total (rounded) 633,000 760,000 e1,100,000

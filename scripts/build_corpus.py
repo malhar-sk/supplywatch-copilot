@@ -20,7 +20,9 @@ from datetime import date
 from pathlib import Path
 
 import httpx
-from pypdf import PdfReader
+import statistics
+
+import pdfplumber
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -41,7 +43,8 @@ SECTIONS = [
     ("Recycling", "recycling-and-import-sources"),
     ("Government Stockpile", "government-stockpile"),
     ("Events, Trends, and Issues", "events-trends-and-issues"),
-    ("World Mine Production and Reserves", "world-production-and-reserves"),
+    ("World Mine Production", "world-production-and-reserves"),
+    ("World Low-Purity Production", "world-production-and-reserves"),
     ("World Production", "world-production-and-reserves"),
     ("World Refinery Production", "world-production-and-reserves"),
     ("World Smelter Production", "world-production-and-reserves"),
@@ -56,6 +59,20 @@ def write_doc(path: Path, meta: dict, body: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     head = "\n".join(f"{k}: {json.dumps(v) if isinstance(v, (list, bool)) else v}" for k, v in meta.items())
     path.write_text(f"{head}\n---\n{body.strip()}\n", encoding="utf-8")
+
+
+def pdf_text(path: Path) -> str:
+    """Text of every page, dropping superscript characters (footnote markers and the
+    'e' = estimated flag). pypdf fused those into table numbers, e.g. Australia's
+    lithium reserves '5'+'7,000,000' -> '57,000,000'; filtering chars smaller than
+    80% of the page's dominant font size fixes that."""
+    pages = []
+    with pdfplumber.open(str(path)) as pdf:
+        for page in pdf.pages:
+            body = statistics.mode(round(c["size"], 1) for c in page.chars)
+            kept = page.filter(lambda o: o.get("object_type") != "char" or o["size"] >= body * 0.8)
+            pages.append(kept.extract_text() or "")
+    return "\n".join(pages)
 
 
 def clean_pdf_text(text: str, material_upper: str) -> str:
@@ -102,12 +119,11 @@ def build_usgs(fetch_date: str) -> int:
                     r = client.get(url)
                     r.raise_for_status()
                     pdf.write_bytes(r.content)
-                reader = PdfReader(str(pdf))
-                raw = "\n".join(p.extract_text() or "" for p in reader.pages)
+                raw = pdf_text(pdf)
                 upper = name.upper().replace("RARE EARTHS", "RARE EARTH")
                 text = clean_pdf_text(raw, upper)
                 for sec_slug, body in split_sections(text).items():
-                    if len(body) < 120:
+                    if len(body) < 40:
                         continue
                     title = f"USGS MCS {year} - {name} - {sec_slug.replace('-', ' ').title()}"
                     doc_id = f"usgs-{year}-{slug}-{sec_slug}"

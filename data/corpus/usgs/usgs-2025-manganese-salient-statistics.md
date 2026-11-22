@@ -8,7 +8,7 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-Salient Statistics—United States:1 2020 2021 2022 2023 2024e
+Salient Statistics—United States: 2020 2021 2022 2023 2024
 Production, mine — — — — —
 Imports for consumption:
 Manganese ores and concentrates 367 497 566 245 320
@@ -18,20 +18,19 @@ Exports:
 Manganese ores and concentrates 1 1 1 2 3
 Ferromanganese 5 9 3 2 2
 Silicomanganese 2 5 3 4 4
-Shipments from Government stockpile:2
+Shipments from Government stockpile:
 Manganese ore — 2 — NA NA
 Ferromanganese and manganese metal, electrolytic 54 21 14 NA NA
 Consumption, reported:
-Manganese ore3 378 399 357 321 320
+Manganese ore 378 399 357 321 320
 Ferromanganese 325 335 339 336 300
 Silicomanganese 229 237 234 230 230
-Consumption, apparent, manganese content4 621 717 804 653 680
-Price, average, manganese content, cost, insurance, and freight,
-China, dollars per metric ton unit5 4.58 5.27 5.97 4.80 5.80
+Consumption, apparent, manganese content 621 717 804 653 680
+Price, average, manganese content, cost, insurance, and freight, 4.58 5.27 5.97 4.80 5.80
+China, dollars per metric ton unit
 Stocks, producer and consumer, yearend:
-Manganese ore3 143 220 312 233 230
+Manganese ore 143 220 312 233 230
 Ferromanganese 35 40 50 27 30
 Silicomanganese 31 34 26 18 20
-Net import reliance6 as a percentage of apparent consumption,
+Net import reliance as a percentage of apparent consumption, 100 100 100 100 100
 manganese content
-100 100 100 100 100

@@ -29,7 +29,7 @@ class Settings(BaseSettings):
 
     embedding_model: str = "BAAI/bge-small-en-v1.5"
     embedding_dim: int = 384
-    retrieval_mode: str = "hybrid"           # vector | hybrid
+    retrieval_mode: str = "rerank"           # vector | hybrid | rerank
     retrieval_top_k: int = 5
     # Minimum cosine similarity of the best chunk; below it /ask refuses.
     refusal_min_similarity: float = 0.62

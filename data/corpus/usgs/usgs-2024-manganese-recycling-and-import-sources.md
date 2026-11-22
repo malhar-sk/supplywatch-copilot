@@ -13,4 +13,4 @@ recovery specifically for manganese was negligible. Manganese is recovered along
 Import Sources (2019–22): Manganese ore: Gabon, 62%; South Africa, 24%; Mexico, 13%; and other, 1%.
 Ferromanganese: Malaysia, 20%; Australia, 19%; South Africa, 15%; Norway, 14%; and other, 32%. Silicomanganese:
 Georgia, 27%; South Africa, 23%; Australia, 19%; Malaysia, 8%; and other, 23%. Manganese contained in principal
-manganese imports:8 Gabon, 25%; South Africa, 21%; Australia, 10%; Georgia, 8%; and other, 36%.
+manganese imports: Gabon, 25%; South Africa, 21%; Australia, 10%; Georgia, 8%; and other, 36%.

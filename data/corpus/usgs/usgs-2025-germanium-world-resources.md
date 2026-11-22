@@ -8,6 +8,6 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-World Resources:7 Germanium reserves data were not widely reported at a mine or country level and thus difficult to
+World Resources: Germanium reserves data were not widely reported at a mine or country level and thus difficult to
 quantify. The available resources of germanium are associated with certain zinc and lead-zinc-copper sulfide ores
 and lignite coal deposits.

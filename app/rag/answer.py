@@ -29,6 +29,7 @@ class AskResult:
     contexts: list[str]
     retrieval_mode: str
     top_similarity: float
+    retrieved_doc_ids: list[str] = field(default_factory=list)
     usage: dict = field(default_factory=dict)
     timings_ms: dict = field(default_factory=dict)
 
@@ -77,7 +78,7 @@ async def ask(db: AsyncSession, question: str, material: str | None = None, mode
     if not hits or top_sim < s.refusal_min_similarity:
         return AskResult(answer=REFUSAL + " Nothing in the SupplyWatch corpus is relevant enough to answer that.",
                          refused=True, citations=[], contexts=contexts, retrieval_mode=mode,
-                         top_similarity=round(top_sim, 4), usage={"input_tokens": 0, "output_tokens": 0},
+                         top_similarity=round(top_sim, 4), retrieved_doc_ids=[h.document_id for h in hits], usage={"input_tokens": 0, "output_tokens": 0},
                          timings_ms={"retrieval": round(t_ret, 1), "llm": 0.0})
 
     llm = get_text_llm(backend=backend)
@@ -92,7 +93,7 @@ async def ask(db: AsyncSession, question: str, material: str | None = None, mode
     used = cited_numbers(answer)
     citations = [h.as_citation(i) for i, h in enumerate(hits, 1) if not refused and (i in used or not used)]
     return AskResult(answer=answer, refused=refused, citations=citations, contexts=contexts, retrieval_mode=mode,
-                     top_similarity=round(top_sim, 4),
+                     top_similarity=round(top_sim, 4), retrieved_doc_ids=[h.document_id for h in hits],
                      usage={"model": res.model, "input_tokens": res.input_tokens, "output_tokens": res.output_tokens,
                             "cached": res.cached},
                      timings_ms={"retrieval": round(t_ret, 1), "llm": round(t_llm, 1)})

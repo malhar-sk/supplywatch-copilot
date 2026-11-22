@@ -8,5 +8,5 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-World Resources:4 Domestic resources of graphite are relatively small, but the rest of the world’s resources exceed
+World Resources: Domestic resources of graphite are relatively small, but the rest of the world’s resources exceed
 800 million tons of recoverable graphite.

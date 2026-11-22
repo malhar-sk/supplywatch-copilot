@@ -8,23 +8,23 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-Salient Statistics—United States: 2020 2021 2022 2023 2024e
+Salient Statistics—United States: 2020 2021 2022 2023 2024
 Production:
 Mine — — — — —
 Secondary W W W W W
 Imports for consumption:
 Ores and concentrates 2,020 1,600 2,130 1,640 1,500
-Other forms1 8,660 10,500 12,300 10,000 8,900
+Other forms 8,660 10,500 12,300 10,000 8,900
 Exports:
 Ores and concentrates 480 441 614 1,510 2,000
-Other forms2 2,470 2,970 3,680 3,180 3,700
-Shipments from Government stockpile:3
+Other forms 2,470 2,970 3,680 3,180 3,700
+Shipments from Government stockpile:
 Concentrate 728 1,030 689 NA NA
 Other forms 34 93 — NA NA
 Consumption:
 Reported, concentrate W W W W W
-Apparent,4 all forms W W W W W
-Price,5 concentrate, average in-warehouse Rotterdam, dollars per
-dry metric ton unit of tungsten trioxide6 172 225 275 258 250
+Apparent, all forms W W W W W
+Price, concentrate, average in-warehouse Rotterdam, dollars per 172 225 275 258 250
+dry metric ton unit of tungsten trioxide
 Stocks, industry, concentrate and other forms, yearend W W W W W
-Net import reliance7 as a percentage of apparent consumption >50 >50 >50 >50 >50
+Net import reliance as a percentage of apparent consumption >50 >50 >50 >50 >50

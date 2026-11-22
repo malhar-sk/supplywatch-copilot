@@ -8,7 +8,7 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-Recycling: Most secondary nickel was in the form of nickel content of stainless -steel scrap. Nickel in alloyed form
+Recycling: Most secondary nickel was in the form of nickel content of stainless-steel scrap. Nickel in alloyed form
 was recovered from the processing of nickel-containing waste. Most recycled nickel was used to produce new alloys
 and stainless steel. In 2024, nickel recovered from scrap accounted for approximately 54% of apparent consumption.
 Import Sources (2020–23): Primary nickel: Canada, 46%; Norway, 11%; Australia, 8%; Brazil, 6%; and other, 29%.

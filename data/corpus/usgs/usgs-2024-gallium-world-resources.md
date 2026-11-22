@@ -8,7 +8,7 @@ fetched_at: 2026-11-22
 synthetic: false
 license: Public domain (U.S. Government work)
 ---
-World Resources:5 Gallium occurs in very small concentrations in ores of other metals. Most gallium is produced as
+World Resources: Gallium occurs in very small concentrations in ores of other metals. Most gallium is produced as
 a byproduct of processing bauxite, and the remainder is produced from zinc-processing residues. The average
 gallium content of bauxite is 50 parts per million. U.S. bauxite deposits consist mainly of subeconomic resources that
 are not generally suitable for alumina production owing to their high silica content. Some domestic zinc ores contain

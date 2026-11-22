@@ -10,10 +10,10 @@ license: Public domain (U.S. Government work)
 ---
 World Mine Production and Reserves: Reserves for Australia, China, Portugal, Spain, Vietnam, and “Other
 countries” were revised based on academic, company, and Government reports.
-Mine productione Reserves10
+Mine production Reserves
 2022 2023
 United States — — NA
-Australia 200 800 11570,000
+Australia 200 800 570,000
 Austria 910 910 10,000
 Bolivia 1,360 1,500 NA
 China 66,000 63,000 2,300,000
@@ -23,5 +23,5 @@ Russia 2,000 2,000 400,000
 Rwanda 1,400 1,400 NA
 Spain 800 1,500 66,000
 Vietnam 4,000 3,500 74,000
-Other countries  1,080   1,100    950,000
+Other countries 1,080 1,100 950,000
 World total (rounded) 79,800 78,000 4,400,000
