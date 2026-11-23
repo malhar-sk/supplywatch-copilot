@@ -1,6 +1,6 @@
 # BLOCKED
 
-## CI workflow could not be pushed to `.github/workflows/` (M8, partially blocked)
+## ~~CI workflow could not be pushed~~ RESOLVED 2026-11-23: token given workflow scope, file moved to `.github/workflows/ci.yml`
 
 - **What:** GitHub rejected the push: `refusing to allow a Personal Access Token to create or update
   workflow '.github/workflows/ci.yml' without 'workflow' scope`. The build host's `gh` token only has
