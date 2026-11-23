@@ -13,3 +13,4 @@ n8n_data/*
 evals/cache/
 *.egg-info/
 data/.pdf_cache/
+.llm_cache*/

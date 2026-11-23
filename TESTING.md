@@ -118,6 +118,21 @@ hit@5, refusal accuracy, latency and tokens for both configs. With `make` instal
 Your numbers will differ a little from `RESULTS.md`: the recorded run used the same model family
 through the Claude Code CLI, and LLM judging is not deterministic.
 
+**Eval round 2 (see the "Eval round 2" section of `RESULTS.md`):**
+```powershell
+$env:DATABASE_URL = "postgresql+asyncpg://postgres:postgres@localhost:15432/supplywatch"
+# Retrieval ablation vector / hybrid / hybrid+rerank. Free (no LLM), about 3 minutes.
+.venv\Scripts\python -m evals.retrieval_ablation
+# Agent eval on 20 SYNTHETIC questions. Needs an LLM (API key above, or a logged-in `claude` CLI).
+.venv\Scripts\python -m evals.agent_eval --agent-model claude-haiku-5-5
+# Variance table from the saved runs. Free; it only reads evals/results/*.json.
+.venv\Scripts\python -m evals.variance_report
+```
+The ablation prints one JSON line per mode. You should see `hit_at_5` of 0.95 / 0.95 / 1.0 and
+`mrr_at_10` of about 0.87 / 0.76 / 0.82. The agent eval prints one line per question (tools called,
+`correct=0/1`), then a summary with `tool_selection` and `answer_correctness` (0.70 in the recorded run;
+yours will vary). The variance report prints a 3-run table where faithfulness spans 0.892–0.938.
+
 ## 4. Connect the MCP server to Claude Desktop
 
 ```powershell

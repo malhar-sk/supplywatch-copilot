@@ -2,7 +2,7 @@
 PY ?= .venv/bin/python
 export DATABASE_URL ?= postgresql+asyncpg://postgres:postgres@localhost:15432/supplywatch
 
-.PHONY: up down logs seed test test-docker eval eval-baseline eval-improved corpus mcp simulate token
+.PHONY: up down logs seed test test-docker eval eval-baseline eval-improved eval-agent eval-ablation eval-variance corpus mcp simulate token
 
 up:            ## build + start db, api, n8n
 	docker compose up -d --build
@@ -30,6 +30,16 @@ eval:          ## RAGAS + retrieval/refusal metrics, baseline vs improved
 eval-retrieval: ## retrieval-only metrics (no LLM, fast)
 	$(PY) -m evals.run_eval --mode vector --tag baseline --retrieval-only
 	$(PY) -m evals.run_eval --mode rerank --tag improved --retrieval-only
+
+eval-agent:    ## agent eval: 20 SYNTHETIC questions, tool precision/recall, Haiku judge, steps, latency (needs claude CLI or API key)
+	LLM_BACKEND=claude_cli $(PY) -m evals.agent_eval --agent-model claude-haiku-5-5
+
+eval-ablation: ## retrieval ablation vector / hybrid / hybrid+rerank (no LLM): hit@5, MRR@10, p95 latency
+	$(PY) -m evals.retrieval_ablation
+
+eval-variance: ## 2 more runs of the improved config (answers + RAGAS), fresh LLM cache each; then the table
+	scripts/run_variance.sh 2 3
+	$(PY) -m evals.variance_report
 
 corpus:        ## rebuild data/corpus (fetches USGS PDFs + generates synthetic docs)
 	$(PY) scripts/build_corpus.py

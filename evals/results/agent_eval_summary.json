@@ -1,0 +1,84 @@
+{
+  "tag": "agent_eval",
+  "started_at": "2026-11-23T12:06:16.631270+00:00",
+  "finished_at": "2026-11-23T12:09:44.727429+00:00",
+  "command": "python -m evals.agent_eval --agent-model claude-haiku-5-5",
+  "golden": "agent_golden.jsonl",
+  "golden_size": 20,
+  "llm_backend": "claude_cli",
+  "agent_model": "claude-haiku-5-5",
+  "judge_model": "claude-haiku-5-5",
+  "n_questions": 20,
+  "n_errors": 0,
+  "tool_selection": {
+    "micro_precision": 1.0,
+    "micro_recall": 0.8519,
+    "macro_precision": 0.85,
+    "macro_recall": 0.8158,
+    "exact_set_match": 0.8
+  },
+  "answer_correctness": 0.7,
+  "n_judged": 20,
+  "n_correct": 14,
+  "by_type": {
+    "single_tool": {
+      "n": 6,
+      "correctness": 0.6667,
+      "micro_precision": 1.0,
+      "micro_recall": 0.8333,
+      "macro_precision": 0.8333,
+      "macro_recall": 0.8333,
+      "exact_set_match": 0.8333
+    },
+    "multi_tool": {
+      "n": 6,
+      "correctness": 0.6667,
+      "micro_precision": 1.0,
+      "micro_recall": 0.9286,
+      "macro_precision": 1.0,
+      "macro_recall": 0.9167,
+      "exact_set_match": 0.8333
+    },
+    "needs_documents": {
+      "n": 4,
+      "correctness": 0.5,
+      "micro_precision": 1.0,
+      "micro_recall": 0.75,
+      "macro_precision": 0.75,
+      "macro_recall": 0.75,
+      "exact_set_match": 0.75
+    },
+    "unanswerable": {
+      "n": 4,
+      "correctness": 1,
+      "micro_precision": 1.0,
+      "micro_recall": 0.6667,
+      "macro_precision": 0.75,
+      "macro_recall": 0.6667,
+      "exact_set_match": 0.75
+    }
+  },
+  "steps": {
+    "llm_turns_mean": 1.85,
+    "llm_turns_max": 3,
+    "tool_calls_mean": 1.2,
+    "tool_calls_max": 4
+  },
+  "latency_ms": {
+    "p50": 7219.8,
+    "p95": 13622.5,
+    "n": 20,
+    "p50_uncached": 7219.8,
+    "p95_uncached": 13622.5,
+    "n_uncached": 20
+  },
+  "agent_tokens_total": {
+    "input": 63874,
+    "output": 15430
+  },
+  "judge_tokens_total": {
+    "input": 23911,
+    "output": 1957,
+    "cached_calls": 0
+  }
+}

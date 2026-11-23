@@ -108,6 +108,15 @@ Full tables, commands, dates and dataset sizes: **[RESULTS.md](RESULTS.md)**.
 The reranker buys recall at about 1.1 s of CPU per query. The improvement was picked on the same
 set it is measured on (three configs tried), so treat the gain as optimistic.
 
+**Eval round 2 (2026-11-23):**
+- **The faithfulness gap is noise.** Three runs of the improved config span 0.892–0.938 (mean 0.922),
+  about 5× the 0.009 gap.
+- **The retrieval gain is stable.** hit@5 was 1.00 in all three runs.
+- **The reranker earns its 1.1 s on only 2 of 40 questions.** It lifts them from rank 7 into the top 5, and
+  every config has hit@10 = 1.0.
+- **Agent eval** (`/agent`, Haiku, 20 synthetic questions): answer correctness **0.70**, tool-selection
+  precision 1.00 and recall 0.85, p95 latency 13.6 s.
+
 ## Repository map
 
 ```

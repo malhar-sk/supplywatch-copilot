@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-11-23T11:23:18.158815+00:00",
+  "golden_size": 50,
+  "command": "python -m evals.retrieval_ablation",
+  "k": 10,
+  "modes": {
+    "vector": {
+      "n_questions": 50,
+      "n_answerable": 40,
+      "hit_at_5": 0.95,
+      "mrr_at_10": 0.8684,
+      "hit_at_10": 1.0,
+      "latency_ms": {
+        "p50": 55.0,
+        "p95": 115.6,
+        "max": 208.3
+      }
+    },
+    "hybrid": {
+      "n_questions": 50,
+      "n_answerable": 40,
+      "hit_at_5": 0.95,
+      "mrr_at_10": 0.7601,
+      "hit_at_10": 1.0,
+      "latency_ms": {
+        "p50": 54.5,
+        "p95": 79.3,
+        "max": 117.0
+      }
+    },
+    "rerank": {
+      "n_questions": 50,
+      "n_answerable": 40,
+      "hit_at_5": 1.0,
+      "mrr_at_10": 0.8187,
+      "hit_at_10": 1.0,
+      "latency_ms": {
+        "p50": 1133.3,
+        "p95": 1513.6,
+        "max": 1872.1
+      }
+    }
+  },
+  "finished_at": "2026-11-23T11:24:55.680964+00:00"
+}
