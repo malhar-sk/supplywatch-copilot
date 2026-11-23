@@ -97,7 +97,16 @@ simulate a spike, use OAuth. For a customer-facing integration guide, see
 
 Full tables, commands, dates and dataset sizes: **[RESULTS.md](RESULTS.md)**.
 
-HEADLINE_TABLE
+| Metric (50-question golden set, 2026-11-22) | Baseline: vector | Improved: hybrid + rerank |
+|---|---|---|
+| RAGAS faithfulness | 0.883 | 0.892 |
+| RAGAS context recall | 0.921 | 0.954 |
+| Retrieval hit@5 | 0.950 | 1.000 |
+| Refusal accuracy (not-in-corpus) | 1.000 | 1.000 |
+| `/ask` p95 latency | 5.7 s | 6.5 s |
+
+The reranker buys recall at about 1.1 s of CPU per query. The improvement was picked on the same
+set it is measured on (three configs tried), so treat the gain as optimistic.
 
 ## Repository map
 
@@ -136,4 +145,4 @@ works in the public domain. Unattended build decisions are logged in [DECISIONS.
 - **Streaming `/ask`** and caching retrieval for repeated questions. Most `/ask` latency is the LLM call.
 - **A human-labelled answer set** alongside RAGAS, to check how well the LLM judge agrees with people.
 
-**Resume line:** RESUME_LINE
+**Resume line:** "Built an LLM copilot over a B2B supply-risk API: pgvector RAG with RAGAS evals (faithfulness 0.88 → 0.89, hit@5 0.95 → 1.00 on a 50-question golden set), LangGraph agent, MCP server, HMAC webhooks → n8n alerting, OAuth2."

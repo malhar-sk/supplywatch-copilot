@@ -1,0 +1,57 @@
+{
+  "tag": "improved",
+  "mode": "rerank",
+  "started_at": "2026-11-22T12:46:50.109624+00:00",
+  "golden_size": 50,
+  "command": "python -m evals.run_eval --mode rerank --tag improved",
+  "llm_backend": "claude_cli",
+  "answer_model": "claude-haiku-5-5",
+  "retrieval_only": false,
+  "n_questions": 50,
+  "n_answerable": 40,
+  "n_not_in_corpus": 10,
+  "hit_at_5": 1.0,
+  "mrr_at_5": 0.8187,
+  "recall_at_5": 0.975,
+  "hit_at_5_by_type": {
+    "exposure": 1.0,
+    "factual": 1.0,
+    "multi_doc": 1.0
+  },
+  "refusal_accuracy": 1.0,
+  "false_refusal_rate": 0.025,
+  "latency_ms": {
+    "p50": 4246.6,
+    "p95": 6483.7,
+    "n": 50,
+    "p50_uncached_llm": 4279.1,
+    "p95_uncached_llm": 6514.3,
+    "n_uncached": 49,
+    "retrieval_p50": 1172.3,
+    "retrieval_p95": 1276.0
+  },
+  "answer_tokens_per_question": {
+    "input_mean": 2330.0,
+    "output_mean": 318.5,
+    "input_total": 116502,
+    "output_total": 15927
+  },
+  "ragas": {
+    "judge_model": "claude-haiku-5-5",
+    "n_samples": 40,
+    "ragas_wall_s": 833.2,
+    "faithfulness": 0.892,
+    "faithfulness_nan": 0,
+    "answer_relevancy": 0.8438,
+    "answer_relevancy_nan": 0,
+    "context_precision": 0.8496,
+    "context_precision_nan": 0,
+    "context_recall": 0.9542,
+    "context_recall_nan": 0,
+    "judge_calls": 441,
+    "judge_cached_calls": 167,
+    "judge_input_tokens": 978394,
+    "judge_output_tokens": 248446
+  },
+  "finished_at": "2026-11-22T13:04:24.808897+00:00"
+}
