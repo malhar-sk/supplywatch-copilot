@@ -4,6 +4,11 @@ Written for a **Windows laptop with Docker Desktop, Git and Python 3.11+**. Comm
 **PowerShell**. A Git Bash / macOS / Linux version follows where it differs. Do the steps in order.
 Every step says what you should see.
 
+> **Which container tool?** These steps use Docker: Docker Desktop on Windows or macOS, or Docker Engine
+> on Linux. With **Podman**, install `podman-compose` and replace `docker compose` with `podman-compose`
+> (and `docker` with `podman`). OrbStack on macOS works with the commands as written.
+> Details: `docs/adr/0001-container-runtime.md`.
+
 Ports used on your machine (change them in `.env` if they're taken): API **18000**, Postgres
 **15432**, n8n **15678**.
 

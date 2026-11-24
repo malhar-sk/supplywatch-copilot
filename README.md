@@ -93,6 +93,13 @@ simulate a spike, use OAuth. For a customer-facing integration guide, see
 | `make simulate` | force a threshold crossing → n8n → `n8n_data/alerts.csv` |
 | `make corpus` | rebuild `data/corpus` (fetch USGS PDFs, generate synthetic news) |
 
+## Container runtime
+
+Runs with **Docker** (Docker Desktop on Windows/macOS, Docker Engine on Linux) using `docker compose up -d`.
+The Compose file sticks to the standard Compose spec, so other Compose-compatible tools (Podman, OrbStack,
+Rancher Desktop, Colima) can run it too. Tested with rootless Podman 4.9.3 + podman-compose 1.3.0 (see `.github/workflows/podman.yml`).
+Why Docker and not the others: [docs/adr/0001-container-runtime.md](docs/adr/0001-container-runtime.md).
+
 ## Results
 
 Full tables, commands, dates and dataset sizes: **[RESULTS.md](RESULTS.md)**.
